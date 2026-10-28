@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="Dippo membangun AI Agent dan solusi Machine Learning untuk membantu bisnis Anda kerja lebih cerdas dan tumbuh lebih cepat.">
+<meta name="theme-color" content="#334EAC">
+<title>Dippo – Kerja Lebih Cerdas, Tumbuh Lebih Cepat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf7f9;--alt:#f4edf1;--surface:#fffdfe;--text:#0b1b3a;--muted:#5a6a88;--brand:#334EAC;--cyan:#334EAC;color-scheme:light;--gold:#f5c84b;--line:#e4e6f0;--navy:#fbf7f9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:800;font-size:22px;text-decoration:none}
+.logo img{width:36px;height:36px;object-fit:contain}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+nav ul a:hover{color:var(--brand)}
+.btn{display:inline-block;background:var(--brand);color:#fff;padding:13px 26px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px;border:0;cursor:pointer;font-family:inherit}
+.btn.light{background:#fff;color:var(--brand)}
+.btn.line{background:transparent;border:1.5px solid var(--cyan);color:var(--cyan)}
+.hero{background:radial-gradient(700px 480px at 85% 40%,rgba(51,78,172,.16) 0,transparent 62%),radial-gradient(520px 420px at 55% 95%,rgba(51,78,172,.10) 0,transparent 65%),var(--bg);color:var(--text);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-top:72px;padding-bottom:72px}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--surface);color:var(--brand);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700}
+h1{font-size:clamp(34px,5.2vw,58px);line-height:1.08;margin:18px 0;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--brand),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:520px;margin:0 0 28px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.mascot{text-align:center;position:relative}
+.mascot img{width:100%;max-width:440px;animation:fl 4s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(51,78,172,.30))}
+@keyframes fl{50%{transform:translateY(-14px)}}
+@media (prefers-reduced-motion:reduce){.mascot img{animation:none}}
+section{padding:72px 0}.alt{background:var(--alt)}
+.eyebrow{color:var(--brand);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+h2{font-size:clamp(26px,3.6vw,40px);line-height:1.2;margin:8px 0 12px;font-weight:800}
+.sub{color:var(--muted);max-width:620px;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--brand)}
+.ico{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--cyan));display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:15px}
+.card small{display:inline-block;margin-bottom:10px;color:var(--brand);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.cta-center{text-align:center;margin-top:32px}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{background:var(--surface);border:1px solid var(--line);padding:12px 22px;border-radius:999px;font-weight:700}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.info p{color:var(--muted)}.info b{display:block;color:var(--text)}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+label{font-size:14px;font-weight:700;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+[hidden]{display:none!important}.hero.slim .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:64px}.hero.slim h1{max-width:760px}.hero.slim p{max-width:640px;margin:0}.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.story p{color:var(--muted);margin:0 0 14px}.list{margin:10px 0 0;padding-left:20px;color:var(--muted)}.list li{margin-bottom:8px}.band{text-align:center;background:linear-gradient(135deg,var(--brand),var(--cyan));color:#fff;border-radius:24px;padding:48px 24px}.band h2{color:#fff;margin-top:0}.band p{opacity:.92;margin:0 0 22px}footer{background:var(--alt);color:var(--muted);padding:40px 0 28px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+footer a{color:var(--muted);text-decoration:none;margin-right:18px;font-size:15px}
+footer small{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px}
+@media(max-width:800px){nav{flex-wrap:wrap;height:auto;padding:10px 0}nav ul{display:flex;order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:18px}.split{grid-template-columns:1fr}.hero .wrap,.contact,footer .wrap{grid-template-columns:1fr}.mascot{order:-1}.mascot img{max-width:260px}.two{grid-template-columns:1fr}.hero .wrap{padding-top:36px}}
+section{padding:88px 0}
+header{background:rgba(251,247,249,.8);-webkit-backdrop-filter:saturate(1.4) blur(16px);backdrop-filter:saturate(1.4) blur(16px)}
+nav ul{gap:4px}nav ul a{padding:8px 14px;border-radius:999px;transition:.2s}nav ul a:hover{background:var(--alt);color:var(--brand)}
+.btn{border-radius:999px;transition:.25s;box-shadow:0 8px 24px rgba(51,78,172,.28)}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(51,78,172,.38)}.btn.line,.btn.light{box-shadow:none}
+.hero{position:relative}.hero .wrap{position:relative}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(51,78,172,.18) 1.2px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);pointer-events:none}
+h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.03em}h2{letter-spacing:-.02em}
+.mascot{isolation:isolate}.mascot::before{content:"";position:absolute;inset:8% 8%;background:radial-gradient(circle,rgba(51,78,172,.25),transparent 65%);filter:blur(12px);z-index:-1}
+.fb{position:absolute;z-index:2;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;box-shadow:0 10px 30px rgba(51,78,172,.16);animation:fl 5s ease-in-out infinite}
+.f1{top:8%;left:0}.f2{top:44%;right:-2%;animation-delay:-1.5s}.f3{bottom:10%;left:4%;animation-delay:-3s}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);padding:18px 0}.ticker div{display:flex;width:max-content;animation:mq 36s linear infinite;will-change:transform;font-weight:700;color:var(--muted)}.ticker span{margin-right:48px;white-space:nowrap}.ticker span::before{content:"\2726  ";color:var(--brand)}@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+.card{border-radius:24px;box-shadow:0 1px 2px rgba(11,27,58,.04),0 12px 32px rgba(51,78,172,.07)}.card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(51,78,172,.16)}
+.ico{border-radius:16px;background:linear-gradient(135deg,#334EAC,#5d79d8);box-shadow:0 8px 20px rgba(51,78,172,.3)}
+.chip{transition:.2s}.chip:hover{background:var(--brand);color:#fff;transform:translateY(-2px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.step{padding:28px;border-radius:24px;background:var(--surface);border:1px solid var(--line);box-shadow:0 12px 32px rgba(51,78,172,.07)}.step b{display:block;font-size:48px;line-height:1;font-weight:800;color:transparent;-webkit-text-stroke:1.5px var(--brand);margin-bottom:14px}.step h3{margin:0 0 6px}.step p{margin:0;color:var(--muted);font-size:15px}
+.band{border-radius:32px;background:radial-gradient(520px 260px at 90% 0,rgba(255,255,255,.2),transparent 70%),var(--brand)}
+form{border-radius:28px;box-shadow:0 20px 60px rgba(51,78,172,.1)}input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:1px}
+@media(max-width:520px){.fb{display:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.fb{animation:none}}
+header{background:transparent!important;border:0!important;-webkit-backdrop-filter:none;backdrop-filter:none;padding:10px 0}
+nav{height:60px;padding:0 10px 0 20px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 40px rgba(51,78,172,.12)}
+h2{font-size:clamp(28px,4vw,46px)}
+.f1{top:6%;right:2%;left:auto}
+.chat{position:absolute;z-index:2;left:-4%;bottom:6%;width:min(270px,72%);background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:20px;padding:12px;display:grid;gap:8px;box-shadow:0 20px 50px rgba(51,78,172,.2);text-align:left;font-size:12.5px;line-height:1.45;animation:fl 6s ease-in-out infinite;animation-delay:-2s}
+.m{padding:8px 12px;border-radius:14px;max-width:92%}.m.u{background:var(--alt);justify-self:end}.m.a{background:var(--brand);color:#fff}
+.typing{display:flex;gap:4px;width:fit-content}.typing i{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.5;animation:bl 1.2s infinite}.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}@keyframes bl{50%{opacity:1;transform:translateY(-3px)}}
+.card{position:relative;overflow:hidden}.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(51,78,172,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover::before{opacity:1}
+#implementasi-ai .grid{grid-template-columns:repeat(6,1fr)}#implementasi-ai .card{min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;grid-column:span 2}
+#implementasi-ai .card:nth-child(1){grid-column:span 4;background:var(--brand);border-color:transparent;color:#fff;background-image:radial-gradient(420px 260px at 100% 0,rgba(255,255,255,.22),transparent 70%)}
+#implementasi-ai .card:nth-child(1) p{color:rgba(255,255,255,.85)}#implementasi-ai .card:nth-child(1) .ico{background:#fff;box-shadow:none}
+#implementasi-ai .card:nth-child(4){grid-column:span 4}
+#implementasi-ai .card h3{font-size:22px}
+#layanan{counter-reset:s;margin:24px 16px;border-radius:40px;color:#fff;background:radial-gradient(520px 320px at 8% 0,rgba(255,255,255,.2),transparent 70%),radial-gradient(420px 320px at 100% 100%,rgba(255,255,255,.14),transparent 70%),var(--brand)}
+#layanan .eyebrow{color:#cfdaff}#layanan .sub{color:rgba(255,255,255,.82)}#layanan .card{display:flex;flex-direction:column;counter-increment:s;padding:28px;background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.22);box-shadow:none}#layanan .card::after{content:counter(s,decimal-leading-zero);order:-1;font-size:48px;line-height:1;font-weight:800;color:transparent;-webkit-text-stroke:1.5px #fff;margin-bottom:14px}#layanan .ico{display:none}#layanan .card p{color:rgba(255,255,255,.82)}#layanan .card::before{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.16),transparent 60%)}#layanan .card:hover{border-color:rgba(255,255,255,.55);box-shadow:none}
+.faq{max-width:780px;display:grid;gap:12px}details{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 24px;box-shadow:0 8px 24px rgba(51,78,172,.05)}summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--brand);font-size:24px;line-height:1;transition:.2s}details[open] summary::after{transform:rotate(45deg)}details p{margin:12px 0 0;color:var(--muted)}
+@media(max-width:800px){nav{height:auto;padding:10px 14px;border-radius:28px}#implementasi-ai .grid{grid-template-columns:1fr}#implementasi-ai .card,#implementasi-ai .card:nth-child(1),#implementasi-ai .card:nth-child(4){grid-column:auto;min-height:0}#layanan{margin:16px 8px;border-radius:28px}}
+@media(max-width:520px){.chat{left:0;bottom:-8px;width:68%}}
+.sl{display:flex;gap:16px;height:460px}
+.sp{position:relative;flex:1;min-width:0;border-radius:24px;overflow:hidden;cursor:pointer;border:1px solid var(--line);background:linear-gradient(160deg,#e3eafb,#fbf7f9);color:var(--text);transition:flex .6s cubic-bezier(.2,.8,.2,1),box-shadow .3s;outline-offset:3px}
+.sp.on{flex:3;box-shadow:0 24px 60px rgba(51,78,172,.2)}
+.sp.p2,.sp.p4{background:linear-gradient(160deg,#4a66c9,#26397f);color:#fff;border-color:transparent}
+.sp .vis{position:absolute;left:0;top:0;width:100%;height:62%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.sp.on .vis{transform:scale(1.06)}
+.sp .t{position:absolute;left:20px;right:16px;bottom:24px;font-size:19px;line-height:1.2;font-weight:400;color:var(--muted);transition:font-size .4s}
+.sp .t b{display:block;font-weight:800;color:var(--text)}
+.sp.p2 .t,.sp.p4 .t{color:rgba(255,255,255,.8)}.sp.p2 .t b,.sp.p4 .t b{color:#fff}
+.sp.on .t{font-size:26px;right:auto;max-width:46%}
+.sp .d{position:absolute;right:24px;bottom:24px;width:min(230px,44%);font-size:14px;line-height:1.55;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .4s}
+.sp.on .d{opacity:1;transform:none;pointer-events:auto;transition-delay:.25s}
+.sp .d p{margin:0}
+.sb{display:inline-block;margin-top:14px;padding:10px 16px;border:1.5px solid currentColor;border-radius:12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:inherit;text-decoration:none}
+@media(max-width:800px){.sl{flex-direction:column;height:auto}.sp{flex:none;height:120px;transition:height .5s cubic-bezier(.2,.8,.2,1)}.sp.on{height:400px}.sp .vis{height:55%}.sp .t,.sp.on .t{font-size:20px;max-width:none;right:20px}.sp.on .t{bottom:150px}.sp .d,.sp.on .d{left:20px;right:20px;width:auto}}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 24px;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}.car::-webkit-scrollbar{display:none}.car.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.ac{flex:0 0 272px;scroll-snap-align:start;border-radius:28px;overflow:hidden;background:var(--surface);box-shadow:0 14px 40px rgba(51,78,172,.16);display:flex;flex-direction:column;transition:transform .3s}.ac:hover{transform:translateY(-6px)}
+.av{height:270px;position:relative;overflow:hidden}.av svg{position:absolute;inset:0;width:100%;height:100%}
+.a1,.a3{background-color:#eaf0ff;background-image:linear-gradient(rgba(51,78,172,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(51,78,172,.1) 1px,transparent 1px);background-size:28px 28px}
+.a2,.a4{background-color:#16215c;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:28px 28px}
+.chipf{position:absolute;z-index:1;background:#fff;border:1px solid rgba(51,78,172,.45);border-radius:999px;padding:4px 11px 4px 9px;font-size:11px;font-weight:700;color:#26397f;display:flex;gap:6px;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,.1)}.chipf::before{content:"";width:8px;height:8px;border-radius:50%;background:#334EAC}
+.ab{flex:1;padding:22px 22px 24px;color:#fff;display:flex;flex-direction:column;gap:12px}.b1{background:#334EAC}.b2{background:#26397f}.b3{background:#4a66c9}.b4{background:#2b4296}
+.pill{align-self:flex-start;background:#eaf0ff;color:#26397f;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+.ab h3{margin:0;font-size:20px;line-height:1.3;color:#fff}.ab p{margin:0;font-size:14px;opacity:.86}.ab a{margin-top:auto;color:#fff;font-weight:700;text-decoration:none;font-size:14px}
+.cn{display:flex;gap:10px;justify-content:flex-end}.cn button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--brand);font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(51,78,172,.12);transition:.2s}.cn button:hover{background:var(--brand);color:#fff}
+@media(max-width:520px){.ac{flex-basis:78%}}
+#industri{margin:24px 16px;border-radius:40px;color:#fff;overflow:hidden;background:radial-gradient(560px 340px at 92% 8%,rgba(93,121,216,.45),transparent 70%),linear-gradient(160deg,#1c2b73,#101a4d)}
+.ind{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center}
+.it h2{color:#fff}.it .eyebrow{color:#cfdaff}.it p{color:rgba(255,255,255,.8);max-width:430px;margin:0 0 28px}
+#industri .btn.line{border-color:#fff;color:#fff}#industri .btn.line:hover{background:#fff;color:var(--brand)}
+.net{position:relative;aspect-ratio:600/440;width:100%}.net svg{position:absolute;inset:0;width:100%;height:100%}
+.net path{fill:none;stroke:rgba(255,255,255,.42);stroke-width:1.6;stroke-dasharray:2 7;stroke-linecap:round;animation:dash 20s linear infinite}@keyframes dash{to{stroke-dashoffset:-180}}
+.nd{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:nf 6s ease-in-out infinite}.nd:nth-of-type(2n){animation-delay:-2s}.nd:nth-of-type(3n){animation-delay:-4s}@keyframes nf{50%{transform:translate(-50%,calc(-50% - 8px))}}
+.ti{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:24px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.38);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.nd.w .ti{background:#fff;border-color:#fff}
+.nl{font-size:12px;font-weight:700;color:rgba(255,255,255,.92);white-space:nowrap}
+.ctr .ti{width:86px;height:86px;border-radius:50%;background:#fff;border-color:#fff;box-shadow:0 0 0 10px rgba(255,255,255,.12),0 0 56px rgba(157,180,255,.65)}.ctr .ti img{width:66px;height:66px;object-fit:contain}
+.mc{position:absolute;transform:translate(-50%,-50%);font:600 12px ui-monospace,Menlo,monospace;color:#fff;border:1.5px solid rgba(255,255,255,.42);background:rgba(255,255,255,.08);padding:5px 10px;border-radius:8px;white-space:nowrap}
+@media(max-width:800px){#industri{margin:16px 8px;border-radius:28px}.ind{grid-template-columns:1fr}.ti{width:42px;height:42px;font-size:19px;border-radius:12px}.ctr .ti{width:64px;height:64px}.ctr .ti img{width:48px;height:48px}.nl{font-size:10px}.mc{font-size:10px;padding:3px 7px}}
+#layanan{margin:0;border-radius:0;color:var(--text);background:var(--bg)}
+#layanan .eyebrow{color:var(--brand)}#layanan .sub{color:var(--muted);margin-bottom:26px}
+#layanan .btn.line{border:1.5px solid var(--text);color:var(--text);background:transparent;box-shadow:none}#layanan .btn.line:hover{background:var(--text);color:var(--bg)}
+#layanan .grid{grid-template-columns:repeat(4,1fr);gap:36px;margin-top:72px}
+#layanan .card,#layanan .card:hover{display:block;padding:0;background:none;border:0;border-radius:0;box-shadow:none;overflow:visible;transform:none}
+#layanan .card::before,#layanan .card::after{display:none}
+#layanan .card h3{font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-.01em;margin:26px 0 12px;color:var(--text)}
+#layanan .card p{font-size:16px;line-height:1.6;color:var(--muted)}
+#layanan .ico{display:block;font-size:0;width:46px;height:46px;margin:0;border-radius:0;background:var(--brand);box-shadow:none}
+#layanan .card:nth-child(1) .ico{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4M8.5 11h5M11 8.5v5'/%3E%3C/svg%3E") left center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4M8.5 11h5M11 8.5v5'/%3E%3C/svg%3E") left center/contain no-repeat}
+#layanan .card:nth-child(2) .ico{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='6' width='12' height='12' rx='2'/%3E%3Cpath d='M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4M10 12h4'/%3E%3C/svg%3E") left center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='6' width='12' height='12' rx='2'/%3E%3Cpath d='M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4M10 12h4'/%3E%3C/svg%3E") left center/contain no-repeat}
+#layanan .card:nth-child(3) .ico{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='6' cy='12' r='3'/%3E%3Ccircle cx='18' cy='6' r='3'/%3E%3Ccircle cx='18' cy='18' r='3'/%3E%3Cpath d='M8.7 10.6l6.6-3.2M8.7 13.4l6.6 3.2'/%3E%3C/svg%3E") left center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='6' cy='12' r='3'/%3E%3Ccircle cx='18' cy='6' r='3'/%3E%3Ccircle cx='18' cy='18' r='3'/%3E%3Cpath d='M8.7 10.6l6.6-3.2M8.7 13.4l6.6 3.2'/%3E%3C/svg%3E") left center/contain no-repeat}
+#layanan .card:nth-child(4) .ico{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E") left center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E") left center/contain no-repeat}
+@media(max-width:800px){#layanan .grid{grid-template-columns:repeat(2,1fr);gap:32px 24px;margin-top:48px}#layanan .card h3{font-size:21px}}
+@media(max-width:520px){#layanan .grid{grid-template-columns:1fr}}
+.info a{color:var(--brand);text-decoration:none;font-weight:600}
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--brand);display:grid;place-items:center;box-shadow:0 12px 32px rgba(51,78,172,.45);transition:transform .2s}.wa:hover{transform:scale(1.08)}
+.wa svg{width:32px;height:32px;fill:#fff}
+.wa::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--brand);opacity:.45;animation:ring 2.4s ease-out infinite;z-index:-1}@keyframes ring{to{transform:scale(1.7);opacity:0}}
+.wa-tip{position:absolute;right:74px;top:50%;transform:translate(8px,-50%);white-space:nowrap;background:#fff;color:var(--text);font-weight:700;font-size:14px;padding:12px 18px;border-radius:16px;border:1px solid var(--line);box-shadow:0 12px 32px rgba(51,78,172,.22);opacity:0;pointer-events:none;transition:opacity .4s,transform .4s}
+.wa-tip::after{content:"";position:absolute;right:-7px;top:50%;width:12px;height:12px;background:#fff;border-right:1px solid var(--line);border-top:1px solid var(--line);transform:translateY(-50%) rotate(45deg)}
+.wa-tip.show,.wa:hover .wa-tip{opacity:1;transform:translate(0,-50%)}
+@media(max-width:520px){.wa{right:14px;width:54px;height:54px}.wa-tip{right:66px;font-size:13px;padding:10px 14px}}
+.wa,.wa::before{background:#25D366}.wa{box-shadow:0 12px 32px rgba(37,211,102,.45)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#beranda"><img src="assets/logo-dippo.png" alt="">Dippo</a>
+<ul><li><a href="#beranda">Beranda</a></li><li><a href="#implementasi-ai">Implementasi AI</a></li><li><a href="#layanan">Layanan Kami</a></li><li><a href="#sorotan">Portofolio</a></li><li><a href="#tentang">Tentang Kami</a></li><li><a href="#kontak">Kontak</a></li></ul>
+<a class="btn" href="#kontak">Hubungi Tim Kami</a>
+</nav></div></header>
+
+<main>
+<div id="v-home">
+<div class="hero" id="beranda"><div class="wrap">
+<div>
+<span class="tag">✨ AI Agent &amp; Machine Learning</span>
+<h1>Kerja Lebih Cerdas, <em>Tumbuh Lebih Cepat</em></h1>
+<p>Dippo membangun AI Agent dan solusi Machine Learning yang mengambil alih pekerjaan berulang, sehingga tim Anda fokus pada hal yang membuat bisnis tumbuh.</p>
+<div class="row"><a class="btn" href="#kontak">Hubungi Tim Kami</a><a class="btn line" href="#implementasi-ai">Lihat Solusi AI</a></div>
+</div>
+<div class="mascot"><span class="fb f1">✦ Aktif 24/7</span><div class="chat"><div class="m u">Stok produk A tinggal berapa?</div><div class="m a">Tersisa 24 unit. Mau saya buatkan pesanan ulang?</div><div class="m a typing"><i></i><i></i><i></i></div></div><img src="assets/maskot-dippo.png" alt="Dippo, maskot robot kucing AI"></div>
+</div></div>
+
+<div class="ticker"><div><span>AI Agent</span><span>Machine Learning</span><span>Otomasi Workflow</span><span>Chatbot WhatsApp</span><span>Predictive Data</span><span>Computer Vision</span><span>Recommendation Engine</span><span>AI Agent</span><span>Machine Learning</span><span>Otomasi Workflow</span><span>Chatbot WhatsApp</span><span>Predictive Data</span><span>Computer Vision</span><span>Recommendation Engine</span></div></div>
+<section id="implementasi-ai"><div class="wrap">
+<span class="eyebrow">Agensi AI</span>
+<h2>Ubah Ide Menjadi Solusi Cerdas</h2>
+<p class="sub">Empat kemampuan inti Dippo untuk membantu bisnis bekerja lebih efisien.</p>
+<div class="car" id="car">
+<article class="ac"><div class="av a1"><svg viewBox="0 0 272 270" aria-hidden="true"><text x="136" y="175" text-anchor="middle" font-size="130" font-weight="800" fill="none" stroke="#334EAC" stroke-width="2" font-family="Plus Jakarta Sans,sans-serif">AI</text><g fill="#fff" stroke="#334EAC" stroke-width="1.5"><rect x="40" y="66" width="8" height="8"/><rect x="224" y="66" width="8" height="8"/><rect x="132" y="170" width="8" height="8"/></g></svg><span class="chipf" style="top:20px;left:18px">Agent</span><span class="chipf" style="top:58px;right:16px">Pesan WhatsApp</span><span class="chipf" style="bottom:22px;left:26px">Jawab otomatis</span></div><div class="ab b1"><span class="pill">AI Agent</span><h3>Asisten otonom yang bekerja untuk bisnis Anda</h3><p>Menjawab pelanggan, mengerjakan tugas admin, dan mengambil tindakan sendiri.</p><a href="#kontak">Pelajari &#8594;</a></div></article>
+<article class="ac"><div class="av a2"><svg viewBox="0 0 272 270" aria-hidden="true"><g fill="rgba(157,180,255,.35)"><rect x="28" y="180" width="28" height="60" rx="6"/><rect x="68" y="150" width="28" height="90" rx="6"/><rect x="108" y="120" width="28" height="120" rx="6"/><rect x="148" y="96" width="28" height="144" rx="6"/><rect x="188" y="70" width="28" height="170" rx="6"/></g><polyline points="42,160 82,130 122,106 162,82 202,54" fill="none" stroke="#fff" stroke-width="3"/><g fill="#fff"><circle cx="42" cy="160" r="5"/><circle cx="82" cy="130" r="5"/><circle cx="122" cy="106" r="5"/><circle cx="162" cy="82" r="5"/><circle cx="202" cy="54" r="6"/></g></svg><span class="chipf" style="top:18px;left:18px">Prediksi</span><span class="chipf" style="bottom:18px;right:18px">Stok naik 20%</span></div><div class="ab b2"><span class="pill">Predictive Data</span><h3>Prediksi penjualan, stok, dan perilaku pelanggan</h3><p>Model dari data historis untuk keputusan yang lebih tepat.</p><a href="#kontak">Pelajari &#8594;</a></div></article>
+<article class="ac"><div class="av a3"><svg viewBox="0 0 272 270" aria-hidden="true"><rect x="44" y="120" width="130" height="96" rx="16" fill="#9db4ff" transform="rotate(-8 109 168)"/><rect x="70" y="90" width="130" height="96" rx="16" fill="#5d79d8" transform="rotate(4 135 138)"/><rect x="98" y="64" width="130" height="96" rx="16" fill="#334EAC"/><path d="M163 90l7 14 15 2-11 10 3 15-14-8-14 8 3-15-11-10 15-2z" fill="#fff"/></svg><span class="chipf" style="top:20px;left:18px">Untuk Anda</span><span class="chipf" style="bottom:20px;right:18px">Paling relevan</span></div><div class="ab b3"><span class="pill">Recommendation Engine</span><h3>Tampilkan yang paling relevan bagi tiap pengguna</h3><p>Rekomendasi produk atau konten berdasarkan perilaku mereka.</p><a href="#kontak">Pelajari &#8594;</a></div></article>
+<article class="ac"><div class="av a4"><svg viewBox="0 0 272 270" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M52 92V66h26M220 92V66h-26M52 178v26h26M220 178v26h-26"/></g><circle cx="136" cy="135" r="48" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/><circle cx="136" cy="135" r="30" fill="#fff" fill-opacity=".92"/><circle cx="136" cy="135" r="13" fill="#334EAC"/></svg><span class="chipf" style="top:20px;left:18px">Terdeteksi</span><span class="chipf" style="bottom:22px;right:18px">Akurasi tinggi</span></div><div class="ab b4"><span class="pill">Computer Vision</span><h3>AI yang membaca gambar dan video</h3><p>Untuk verifikasi, inspeksi, dan pemantauan otomatis.</p><a href="#kontak">Pelajari &#8594;</a></div></article>
+</div>
+<div class="cn"><button type="button" data-d="p" aria-label="Sebelumnya">&#8592;</button><button type="button" data-d="n" aria-label="Berikutnya">&#8594;</button></div>
+<div class="cta-center"><a class="btn" href="#kontak">Jadwalkan Demo</a></div>
+</div></section>
+
+<section class="alt" id="sorotan"><div class="wrap">
+<span class="eyebrow">Sorotan</span>
+<h2>Contoh Solusi yang Bisa Kami Bangun</h2>
+<p class="sub">Arahkan kursor ke salah satu kolom untuk melihat detailnya.</p>
+<div class="sl">
+<div class="sp p1 on" tabindex="0"><svg class="vis" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9db4ff"/><stop offset="1" stop-color="#334EAC"/></linearGradient></defs><g transform="translate(110 40)"><rect y="130" width="230" height="70" rx="18" fill="#334EAC" transform="skewY(-12)"/><rect y="90" width="230" height="70" rx="18" fill="url(#g1)" transform="skewY(-12)"/><rect y="50" width="230" height="70" rx="18" fill="#dfe7ff" transform="skewY(-12)"/></g></svg><div class="t">Customer Service<b>Otomatis</b></div><div class="d"><p>AI Agent membalas pertanyaan pelanggan di WhatsApp dan Telegram, 24 jam penuh.</p><a class="sb" href="#kontak">Selengkapnya &#8599;</a></div></div>
+<div class="sp p2" tabindex="0"><svg class="vis" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M60 40L150 100L250 50L330 120M150 100L200 190L290 170M250 50L290 170" stroke="rgba(255,255,255,.35)" stroke-width="2" fill="none"/><g fill="#fff"><circle cx="60" cy="40" r="12"/><circle cx="150" cy="100" r="16"/><circle cx="250" cy="50" r="12"/><circle cx="330" cy="120" r="14"/><circle cx="200" cy="190" r="12"/><circle cx="290" cy="170" r="18" fill-opacity=".85"/></g></svg><div class="t">Admin &amp; Laporan<b>Otomatis</b></div><div class="d"><p>Catat data masuk dan keluar, lalu rangkum menjadi laporan harian tanpa input manual.</p><a class="sb" href="#kontak">Selengkapnya &#8599;</a></div></div>
+<div class="sp p3" tabindex="0"><svg class="vis" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g transform="translate(70 30)"><path d="M0 70L130 20L260 70L130 120Z" fill="#dfe7ff"/><path d="M0 110L130 60L260 110L130 160Z" fill="#9db4ff"/><path d="M0 150L130 100L260 150L130 200Z" fill="#334EAC"/></g></svg><div class="t">Prediksi<b>Permintaan</b></div><div class="d"><p>Perkirakan kebutuhan stok agar tidak kelebihan atau kehabisan barang.</p><a class="sb" href="#kontak">Selengkapnya &#8599;</a></div></div>
+<div class="sp p4" tabindex="0"><svg class="vis" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="200" cy="130" r="105" stroke-opacity=".25"/><circle cx="200" cy="130" r="72" stroke-opacity=".45"/></g><circle cx="200" cy="130" r="42" fill="#fff" fill-opacity=".92"/><circle cx="200" cy="130" r="18" fill="#334EAC"/></svg><div class="t">Rekomendasi<b>Produk</b></div><div class="d"><p>Tampilkan penawaran yang tepat untuk setiap pelanggan berdasarkan perilakunya.</p><a class="sb" href="#kontak">Selengkapnya &#8599;</a></div></div>
+</div>
+</div></section>
+
+<section id="industri"><div class="wrap ind">
+<div class="it"><span class="eyebrow">Industri</span><h2>Bersama Dippo, AI Dapat Diterapkan di Berbagai Industri</h2><p>Dippo menghubungkan AI Agent dan Machine Learning dengan proses di setiap sektor, dari retail hingga kesehatan, sesuai skala bisnis Anda.</p><a class="btn line" href="#kontak">Diskusikan Kebutuhan &#8594;</a></div>
+<div class="net"><svg viewBox="0 0 600 440" aria-hidden="true"><path d="M300 220L190 150L90 70M300 220L420 160L510 80M300 220L410 300L470 385M300 220L180 310L55 240M180 310L180 385M300 220L300 40M300 220L545 250M300 40L420 160M545 250L420 160M545 250L410 300M190 150L300 40"/></svg>
+<span class="mc" style="left:31.7%;top:34.1%">Chatbot</span><span class="mc" style="left:70%;top:36.4%">Prediksi</span><span class="mc" style="left:68.3%;top:68.2%">Otomasi</span><span class="mc" style="left:30%;top:70.5%">Laporan</span>
+<div class="nd ctr" style="left:50%;top:50%"><span class="ti"><img data-m alt="Dippo"></span></div>
+<div class="nd w" style="left:15%;top:15.9%"><span class="ti">🛒</span><span class="nl">Retail</span></div>
+<div class="nd" style="left:50%;top:9.1%"><span class="ti">🏭</span><span class="nl">Manufaktur</span></div>
+<div class="nd w" style="left:85%;top:18.2%"><span class="ti">🏥</span><span class="nl">Kesehatan</span></div>
+<div class="nd" style="left:90.8%;top:56.8%"><span class="ti">🎓</span><span class="nl">Pendidikan</span></div>
+<div class="nd w" style="left:78.3%;top:87.5%"><span class="ti">💳</span><span class="nl">Keuangan</span></div>
+<div class="nd" style="left:30%;top:87.5%"><span class="ti">🚚</span><span class="nl">Logistik</span></div>
+<div class="nd w" style="left:9.2%;top:54.5%"><span class="ti">🏪</span><span class="nl">UMKM</span></div>
+</div>
+</div></section>
+
+<section id="layanan"><div class="wrap">
+<span class="eyebrow">Layanan Kami</span>
+<h2>Dari Konsep Hingga Berjalan di Bisnis Anda</h2>
+<p class="sub">Pendampingan menyeluruh agar solusi AI benar-benar terpakai.</p>
+<a class="btn line" href="#kontak">Diskusikan Layanan &#8594;</a>
+<div class="grid">
+<div class="card"><div class="ico">🔍</div><h3>Konsultasi &amp; Analisis</h3><p>Memetakan proses bisnis dan peluang AI yang paling berdampak.</p></div>
+<div class="card"><div class="ico">🛠️</div><h3>Pengembangan Solusi AI</h3><p>Membangun AI Agent dan model Machine Learning sesuai kebutuhan.</p></div>
+<div class="card"><div class="ico">🔗</div><h3>Integrasi Sistem</h3><p>Menghubungkan AI dengan aplikasi, WhatsApp, spreadsheet, dan sistem Anda.</p></div>
+<div class="card"><div class="ico">🛡️</div><h3>Dukungan Berkelanjutan</h3><p>Pemantauan dan optimasi agar performa solusi terus meningkat.</p></div>
+</div>
+</div></section>
+
+</div>
+<div id="v-about" hidden>
+<div class="hero slim" id="tentang"><div class="wrap"><div>
+<span class="tag">Tentang Kami</span>
+<h1>Kami Membantu Bisnis <em>Kerja Lebih Cerdas</em></h1>
+<p>Dippo adalah perusahaan AI Agent dan Machine Learning yang membantu bisnis mengotomatiskan pekerjaan berulang dan mengambil keputusan berbasis data.</p>
+</div></div></div>
+
+<section><div class="wrap split" style="grid-template-columns:1.2fr .8fr">
+<div class="story">
+<span class="eyebrow">Siapa Dippo</span>
+<h2>Cerita Singkat Dippo</h2>
+<p>Banyak bisnis kehabisan waktu untuk pekerjaan yang sama setiap hari: membalas pesan pelanggan, mencatat data, dan menyusun laporan. Dippo hadir agar pekerjaan itu bisa ditangani AI, sehingga tim Anda punya waktu untuk hal yang lebih bernilai.</p>
+<p>Kami membangun AI Agent dan model Machine Learning yang mudah dipakai, terhubung dengan alat yang sudah Anda gunakan, dan dirancang untuk benar-benar berdampak pada pertumbuhan bisnis.</p>
+</div>
+<div class="card"><h3>Fokus Kami</h3><ul class="list"><li>AI Agent untuk layanan dan operasional</li><li>Machine Learning untuk prediksi dan rekomendasi</li><li>Otomasi workflow lintas aplikasi</li></ul></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<span class="eyebrow">Arah Kami</span>
+<h2>Visi &amp; Misi</h2>
+<div class="grid" style="margin-top:28px">
+<div class="card"><div class="ico">🔭</div><h3>Visi</h3><p>Menjadi mitra AI yang membuat setiap bisnis, besar maupun kecil, bisa bekerja lebih cerdas dan tumbuh lebih cepat.</p></div>
+<div class="card"><div class="ico">🚀</div><h3>Misi</h3><ul class="list"><li>Membangun solusi AI yang praktis dan mudah dipakai</li><li>Mengotomatiskan pekerjaan berulang agar tim fokus pada hal penting</li><li>Mendampingi klien dari ide hingga solusi berjalan</li></ul></div>
+</div></div></section>
+
+<section><div class="wrap">
+<span class="eyebrow">Nilai Kami</span>
+<h2>Prinsip yang Kami Pegang</h2>
+<div class="grid" style="margin-top:28px">
+<div class="card"><div class="ico">✨</div><h3>Sederhana</h3><p>Teknologi canggih dengan cara pakai yang mudah dipahami.</p></div>
+<div class="card"><div class="ico">📊</div><h3>Berdampak</h3><p>Setiap solusi diukur dari manfaat nyata bagi bisnis Anda.</p></div>
+<div class="card"><div class="ico">🤝</div><h3>Transparan</h3><p>Komunikasi jelas soal proses, hasil, dan batasan solusi.</p></div>
+<div class="card"><div class="ico">📚</div><h3>Terus Belajar</h3><p>Kami mengikuti perkembangan AI demi solusi yang lebih baik.</p></div>
+</div></div></section>
+
+<section class="alt"><div class="wrap split">
+<div class="mascot"><img data-m alt="Dippo, maskot robot kucing AI" style="max-width:320px"></div>
+<div class="story">
+<span class="eyebrow">Maskot Kami</span>
+<h2>Kenalan dengan Dippo</h2>
+<p>Dippo adalah robot kucing berlogo AI yang menjadi wajah perusahaan kami. Mata layarnya yang berkedip dan jempol yang terangkat mewakili semangat kami: ramah, cepat, dan selalu siap membantu bisnis Anda.</p>
+</div></div></section>
+
+<section><div class="wrap"><div class="band"><h2>Siap Bekerja Bersama Dippo?</h2><p>Ceritakan kebutuhan bisnis Anda dan mari cari solusi AI yang tepat.</p><a class="btn light" href="#kontak">Hubungi Tim Kami</a></div></div></section>
+</div>
+
+<section id="faq"><div class="wrap">
+<span class="eyebrow">FAQ</span>
+<h2>Pertanyaan yang Sering Diajukan</h2>
+<p class="sub">Jawaban singkat sebelum Anda memulai.</p>
+<div class="faq">
+<details><summary>Apa itu AI Agent?</summary><p>AI Agent adalah asisten digital yang bisa memahami permintaan, mengambil keputusan sederhana, dan menjalankan tugas sendiri, misalnya membalas pelanggan atau mencatat data.</p></details>
+<details><summary>Apakah UMKM bisa memakai solusi Dippo?</summary><p>Bisa. Kami menyesuaikan solusi dengan skala dan anggaran, mulai dari otomasi sederhana hingga sistem yang lebih lengkap.</p></details>
+<details><summary>Berapa lama proses pembuatannya?</summary><p>Tergantung kompleksitas kebutuhan. Setelah diskusi awal, kami akan memberikan estimasi waktu yang jelas.</p></details>
+<details><summary>Bagaimana dengan keamanan data?</summary><p>Kami memperlakukan data dengan hati-hati dan membahas kebutuhan keamanan sejak tahap perancangan.</p></details>
+</div></div></section>
+
+<section id="kontak"><div class="wrap contact">
+<div class="info">
+<span class="eyebrow">Hubungi Kami</span>
+<h2>Punya Ide atau Proyek? Mari Wujudkan Bersama</h2>
+<p>Ceritakan kebutuhan Anda, dan tim Dippo akan menghubungi Anda.</p>
+<p><b>Email</b><a href="mailto:halodippo@gmail.com">halodippo@gmail.com</a></p>
+<p><b>WhatsApp</b><a href="https://wa.me/6285889002998" target="_blank" rel="noopener">+62 858-8900-2998</a></p>
+</div>
+<form id="f">
+<div class="two"><label>Nama Lengkap<input name="n" required></label><label>Email<input name="e" type="email" required></label></div>
+<div class="two"><label>Perusahaan<input name="c"></label>
+<label>Kebutuhan<select name="k"><option>AI Agent</option><option>Machine Learning</option><option>Otomasi Workflow</option><option>Konsultasi</option></select></label></div>
+<label>Pesan<textarea name="m" rows="4"></textarea></label>
+<button class="btn" type="submit">Kirim Pesan</button>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div><b style="color:var(--text);font-size:20px">Dippo</b><p>Kerja Lebih Cerdas, Tumbuh Lebih Cepat.</p></div>
+<div><a href="#beranda">Beranda</a><a href="#layanan">Layanan</a><a href="#sorotan">Portofolio</a><a href="#tentang">Tentang Kami</a><a href="#kontak">Kontak</a></div>
+<small>© 2026 Dippo. Semua hak dilindungi.</small>
+</div></footer>
+<a class="wa" href="https://wa.me/6285889002998?text=Halo%20Dippo%2C%20saya%20ingin%20berkonsultasi" target="_blank" rel="noopener" aria-label="Chat WhatsApp Dippo"><span class="wa-tip" id="watip">Hubungi Dippo ya :)</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(ev.target);
+var b='Nama: '+d.get('n')+'\nEmail: '+d.get('e')+'\nPerusahaan: '+d.get('c')+'\nKebutuhan: '+d.get('k')+'\n\n'+d.get('m');
+location.href='mailto:halodippo@gmail.com?subject='+encodeURIComponent('Konsultasi Dippo')+'&body='+encodeURIComponent(b);});
+var view='home',first=document.querySelector('.logo img');
+document.querySelectorAll('img[data-m]').forEach(function(i){i.src='assets/maskot-dippo.png'});
+function route(){var h=location.hash.slice(1);
+if(h==='tentang')view='about';
+else if(['beranda','implementasi-ai','sorotan','layanan'].indexOf(h)>-1)view='home';
+document.getElementById('v-home').hidden=view!=='home';
+document.getElementById('v-about').hidden=view!=='about';
+var el=document.getElementById(h);
+if(!h||h==='tentang'||h==='beranda'||!el){window.scrollTo(0,0)}else{el.scrollIntoView()}}
+window.addEventListener('hashchange',route);route();
+(function(){var t=document.getElementById('watip');setTimeout(function(){t.classList.add('show')},300);setTimeout(function(){t.classList.remove('show')},5300)})();
+document.querySelectorAll('.cn button').forEach(function(b){b.addEventListener('click',function(){document.getElementById('car').scrollBy({left:(b.dataset.d==='n'?1:-1)*290,behavior:'smooth'})})});
+(function(){var c=document.getElementById('car'),d=false,x=0,s=0;c.addEventListener('mousedown',function(e){d=true;x=e.pageX;s=c.scrollLeft;c.classList.add('drag')});window.addEventListener('mouseup',function(){d=false;c.classList.remove('drag')});c.addEventListener('mousemove',function(e){if(d){c.scrollLeft=s-(e.pageX-x)}})})();
+document.querySelectorAll('.ticker div').forEach(function(d){d.innerHTML+=d.innerHTML});
+document.querySelectorAll('.sl').forEach(function(sl){var ps=sl.querySelectorAll('.sp');function on(p){ps.forEach(function(x){x.classList.toggle('on',x===p)})}ps.forEach(function(p){['mouseenter','focus','click'].forEach(function(ev){p.addEventListener(ev,function(){on(p)})})})});
+document.addEventListener('mousemove',function(e){var c=e.target.closest&&e.target.closest('.card');if(c){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in');t.style.transitionDelay=''},900)}})},{threshold:.12});
+document.querySelectorAll('.card,.step,.chip,.band,section h2').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)})}
+</script>
+</body>
+</html>
