@@ -1,0 +1,25 @@
+/* Navigasi dan tombol WhatsApp: sama di semua halaman */
+.sh{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:10px 0}
+.shw{max-width:1120px;margin:0 auto;padding:0 20px}
+.sn{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 10px 0 20px;background:rgba(247,246,242,.93);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid #E4E1D8;border-radius:999px;box-shadow:0 10px 40px rgba(118,87,232,.12);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.2}
+.sn-logo{display:flex;align-items:center;gap:8px;color:#17172B;font-weight:800;font-size:23px;letter-spacing:-.03em;text-decoration:none;font-family:'Bricolage Grotesque','Plus Jakarta Sans',sans-serif}
+.sn-logo img{width:36px;height:36px;object-fit:contain}
+.sn ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.sn ul a{display:block;color:#5D5C73;text-decoration:none;font-size:15px;font-weight:500;padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.sn ul a:hover,.sn ul a.on{background:rgba(118,87,232,.1);color:#5F42CC}
+.sn-cta{display:inline-block;background:#7657E8;color:#fff;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 24px rgba(118,87,232,.28);transition:transform .25s,box-shadow .25s}
+.sn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(118,87,232,.38)}
+@media(max-width:800px){.sn{flex-wrap:wrap;height:auto;padding:10px 14px;border-radius:28px;gap:8px}.sn ul{order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:12px}.sn-cta{padding:10px 18px}}
+
+.wab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#7657E8;display:grid;place-items:center;box-shadow:0 12px 32px rgba(118,87,232,.45);transition:transform .2s;text-decoration:none}
+.wab:hover{transform:scale(1.08)}
+.wab svg{width:32px;height:32px;fill:#fff}
+.wab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#7657E8;opacity:.45;animation:wabring 2.4s ease-out infinite;z-index:-1}
+@keyframes wabring{to{transform:scale(1.7);opacity:0}}
+.wab-tip{position:absolute;right:76px;top:50%;transform:translate(8px,-50%);white-space:nowrap;background:#fff;color:#17172B;font:700 14px 'Plus Jakarta Sans',system-ui,sans-serif;padding:12px 18px;border-radius:16px;border:1px solid #E4E1D8;box-shadow:0 12px 32px rgba(118,87,232,.22);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.wab-tip::after{content:"";position:absolute;right:-6px;top:50%;width:12px;height:12px;background:#fff;border-right:1px solid #E4E1D8;border-top:1px solid #E4E1D8;transform:translateY(-50%) rotate(45deg)}
+.wab:hover .wab-tip,.wab:focus-visible .wab-tip{opacity:1;transform:translate(0,-50%)}
+@media(prefers-reduced-motion:reduce){.wab::before{animation:none}}
+
+.sn ul a,.sn-cta{white-space:nowrap}
+@media(max-width:1000px) and (min-width:801px){.sn ul a{padding:8px 10px;font-size:14px}.sn-cta{padding:12px 18px;font-size:14px}}
