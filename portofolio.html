@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portofolio – Dippo</title>
+<meta name="description" content="Contoh solusi dan demo interaktif Dippo AI, Dippo Creative, dan Dippo Edu. Semua berlabel Concept Project, Sample, atau Interactive Demo.">
+<link rel="icon" href="assets/maskot-dippo.png">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/portofolio.css"><link rel="stylesheet" href="css/system.css"><link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="">
+<main>
+
+<!-- ===== Hero ===== -->
+<section class="hero pfh">
+  <div class="wrap">
+    <div class="copy">
+      <span class="pill up" style="--i:0">Portofolio &amp; Demo</span>
+      <h1 class="up" style="--i:1">Contoh solusi yang bisa Dippo kerjakan.</h1>
+      <p class="lead up" style="--i:2">Lihat contoh visualnya, lalu coba demo interaktifnya. Belum ada proyek klien yang dipublikasikan di sini. Semua contoh dibuat Dippo dengan data fiktif dan diberi label yang jelas.</p>
+      <div class="btns up" style="--i:3"><a class="btn" href="#demo">Coba demo interaktif</a><a class="btn alt" href="#karya">Lihat contoh proyek</a></div>
+      <ul class="pf-leg up" style="--i:4">
+        <li><b>Concept Project</b><span>Rancangan solusi untuk kasus fiktif</span></li>
+        <li><b>Sample</b><span>Contoh tampilan hasil layanan</span></li>
+        <li><b>Interactive Demo</b><span>Simulasi yang bisa dicoba</span></li>
+      </ul>
+    </div>
+    <div class="art up" style="--i:2">
+      <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true"><circle cx="300" cy="300" r="286" class="r1"/><circle cx="300" cy="300" r="226" class="r2"/><g class="spin"><circle cx="300" cy="14" r="9" fill="#9B84F5"/><circle cx="527" cy="388" r="8" fill="#FFC83D"/><circle cx="96" cy="452" r="8" fill="#2DD4BF"/></g></svg>
+      <i class="disc" aria-hidden="true"></i><i class="shadow" aria-hidden="true"></i>
+      <img class="mascot" data-d="16" src="assets/maskot-dippo.png" alt="Dippo, maskot robot kucing">
+      <a class="fl f1 t-ai" data-d="34" href="#demo"><div class="fh"><i class="dot"></i>Dippo AI</div><b class="pf-fb">Interactive Demo</b><span class="pf-fs">Coba chatbot WhatsApp</span></a>
+      <a class="fl f2 t-cr" data-d="-28" href="#karya"><div class="fh"><i class="dot"></i>Dippo Creative</div><b class="pf-fb">Concept Project</b><span class="pf-fs">Brand identity board</span></a>
+      <a class="fl f3 t-ed" data-d="24" href="#karya"><div class="fh"><i class="dot"></i>Dippo Edu</div><b class="pf-fb">Sample</b><span class="pf-fs">Dokumen akademik</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Interactive Demo ===== -->
+<section class="pf-demo" id="demo"><div class="wrap">
+  <div class="pf-head"><h2>Coba sendiri, tanpa daftar.</h2><p class="lead">Tiga simulasi singkat untuk melihat cara kerja layanan Dippo. Semua jawaban dan data di dalamnya adalah contoh.</p></div>
+  <div class="pf-box">
+    <div class="pf-tabs" role="tablist" aria-label="Pilih demo">
+      <button type="button" role="tab" id="tab-ai" aria-selected="true" aria-controls="dm-ai" class="t-ai"><i></i>Chatbot WhatsApp<small>Dippo AI</small></button>
+      <button type="button" role="tab" id="tab-cr" aria-selected="false" aria-controls="dm-cr" class="t-cr" tabindex="-1"><i></i>Brand preview<small>Dippo Creative</small></button>
+      <button type="button" role="tab" id="tab-ed" aria-selected="false" aria-controls="dm-ed" class="t-ed" tabindex="-1"><i></i>Cek dokumen<small>Dippo Edu</small></button>
+    </div>
+
+    <!-- Demo AI -->
+    <div class="pf-dm on t-ai" id="dm-ai" role="tabpanel" aria-labelledby="tab-ai">
+      <div class="pf-side">
+        <span class="pf-tag">Interactive Demo · data contoh</span>
+        <h3>Chatbot untuk toko online</h3>
+        <p>Ketuk salah satu balasan cepat atau ketik sendiri. Di sisi kiri kamu bisa melihat apa yang terjadi di balik layar.</p>
+        <ol class="pf-steps" id="ai-steps">
+          <li data-s="1">Pesan pelanggan diterima</li>
+          <li data-s="2">AI membaca dan membalas</li>
+          <li data-s="3">Order dicatat ke Google Sheets</li>
+          <li data-s="4">Owner mendapat notifikasi</li>
+          <li data-s="5">Diteruskan ke admin manusia</li>
+        </ol>
+        <div class="pf-sheet" aria-label="Contoh isi Google Sheets">
+          <div class="pf-sh-h"><b>Pesanan (Sheets contoh)</b></div>
+          <table><thead><tr><th>Produk</th><th>Ukuran</th><th>Qty</th><th>Total</th></tr></thead><tbody id="ai-rows"><tr class="empty"><td colspan="4">Belum ada pesanan. Coba pesan lewat chat.</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="pf-main">
+        <div class="pf-phone">
+          <div class="pf-ph-h"><img src="assets/maskot-ai.png" alt=""><div><b>Toko Contoh</b><small>asisten AI · online</small></div><button type="button" class="pf-reset" id="ai-reset" aria-label="Ulangi demo">Ulangi</button></div>
+          <div class="pf-msgs" id="ai-msgs" aria-live="polite"></div>
+          <div class="pf-qr" id="ai-qr"></div>
+          <form class="pf-in" id="ai-form" autocomplete="off"><input id="ai-input" aria-label="Ketik pesan" placeholder="Ketik pesan, misalnya: lihat katalog" maxlength="80"><button type="submit" aria-label="Kirim">Kirim</button></form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo Creative -->
+    <div class="pf-dm t-cr" id="dm-cr" role="tabpanel" aria-labelledby="tab-cr" hidden>
+      <div class="pf-side">
+        <span class="pf-tag">Interactive Demo · simulasi sederhana</span>
+        <h3>Brand preview</h3>
+        <p>Ubah nama, warna, dan gaya huruf. Papan brand di sebelah kanan ikut berubah. Ini simulasi, bukan hasil desain final.</p>
+        <label class="pf-f">Nama brand<input id="cr-name" value="Kopi Contoh" maxlength="18" autocomplete="off"></label>
+        <fieldset class="pf-f"><legend>Warna</legend>
+          <div class="pf-sw" id="cr-pal">
+            <label><input type="radio" name="pal" value="0" checked><span style="--a:#7657E8;--b:#FFC83D" title="Ungu dan kuning"></span></label>
+            <label><input type="radio" name="pal" value="1"><span style="--a:#17172B;--b:#2DD4BF" title="Navy dan teal"></span></label>
+            <label><input type="radio" name="pal" value="2"><span style="--a:#FFC83D;--b:#17172B" title="Kuning dan navy"></span></label>
+            <label><input type="radio" name="pal" value="3"><span style="--a:#E8553D;--b:#F7F6F2" title="Merah dan putih"></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="pf-f"><legend>Gaya huruf</legend>
+          <div class="pf-seg" id="cr-font"><label><input type="radio" name="font" value="bold" checked><span>Tegas</span></label><label><input type="radio" name="font" value="clean"><span>Bersih</span></label></div>
+        </fieldset>
+      </div>
+      <div class="pf-main">
+        <div class="pf-board" id="cr-board" style="--a:#7657E8;--b:#FFC83D;--c:#17172B">
+          <div class="cb-logo"><b id="cr-ini">K</b></div>
+          <div class="cb-word"><b id="cr-word">Kopi Contoh</b><small>Brand fiktif untuk demo</small></div>
+          <div class="cb-card"><i class="cb-m" id="cr-ini2">K</i><b id="cr-word2">Kopi Contoh</b><small>halo@contoh.id</small></div>
+          <div class="cb-post"><span id="cr-word3">Kopi Contoh</span><p>Satu brand, satu gaya yang konsisten.</p><i></i></div>
+          <div class="cb-pal"><i style="background:var(--a)"></i><i style="background:var(--b)"></i><i style="background:var(--c)"></i><i style="background:#F7F6F2"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo Edu -->
+    <div class="pf-dm t-ed" id="dm-ed" role="tabpanel" aria-labelledby="tab-ed" hidden>
+      <div class="pf-side">
+        <span class="pf-tag">Interactive Demo · naskah contoh</span>
+        <h3>Cek dokumen</h3>
+        <p>Nyalakan proofreading dan formatting untuk melihat naskah mentah berubah menjadi rapi. Kamu juga bisa mengetuk kata bergaris merah satu per satu.</p>
+        <div class="pf-sws">
+          <label class="pf-swt"><input type="checkbox" role="switch" id="ed-proof"><span></span>Proofreading<small>Ejaan dan tanda baca</small></label>
+          <label class="pf-swt"><input type="checkbox" role="switch" id="ed-fmt"><span></span>Formatting<small>Margin, spasi, dan rata teks</small></label>
+        </div>
+        <ul class="pf-stat"><li id="ed-s1"><i></i><span>Koreksi ejaan: 0 dari 4</span></li><li id="ed-s2"><i></i><span>Format: belum sesuai pedoman</span></li></ul>
+      </div>
+      <div class="pf-main">
+        <div class="pf-paper" id="ed-doc">
+          <h4>Bab 3 Metode Penelitian</h4>
+          <p>Penelitian ini <button type="button" class="er" data-fix="menggunakan">mengunakan</button> pendekatan kuantitatif dengan metode <button type="button" class="er" data-fix="survei">survey</button>. Data dikumpulkan melalui kuesioner yang disebar kepada responden<button type="button" class="er" data-fix=",">&nbsp;,</button> kemudian dianalisis menggunakan statistik deskriptif. Hasil analisis diharapkan dapat <button type="button" class="er" data-fix="memberikan">memeberikan</button> gambaran yang jelas mengenai variabel penelitian.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== Contoh proyek ===== -->
+<section class="pf-karya" id="karya"><div class="wrap">
+  <div class="pf-head"><h2>Contoh proyek untuk tiga layanan.</h2><p class="lead">Concept Project dan Sample buatan Dippo, memakai nama dan data fiktif. Pilih kategori untuk melihat satu layanan saja.</p></div>
+  <div class="pf-filter" role="group" aria-label="Filter kategori">
+    <button type="button" class="on" data-f="all" aria-pressed="true">Semua <em>10</em></button>
+    <button type="button" class="t-ai" data-f="ai" aria-pressed="false"><i></i>Dippo AI <em>4</em></button>
+    <button type="button" class="t-cr" data-f="cr" aria-pressed="false"><i></i>Dippo Creative <em>3</em></button>
+    <button type="button" class="t-ed" data-f="ed" aria-pressed="false"><i></i>Dippo Edu <em>3</em></button>
+  </div>
+  <p class="pf-count" id="pf-count" aria-live="polite">Menampilkan 10 contoh</p>
+
+  <div class="pf-grid" id="pf-grid">
+
+    <!-- 1 Brand board -->
+    <article class="pf-tile t-cr" data-cat="cr" data-span="7">
+      <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
+        <div class="mk-board"><div class="b-logo"><b>K</b><span>Kopi Contoh</span></div><div class="b-card"><i class="bl">K</i><b>Kopi Contoh</b><small>Brand fiktif untuk contoh</small></div><div class="b-pal"><i style="--c:#7657E8"></i><i style="--c:#FFC83D"></i><i style="--c:#17172B"></i><i style="--c:#F7F6F2"></i></div><div class="b-type"><b>Aa</b><small>Bricolage Grotesque<br>Plus Jakarta Sans</small></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Creative</span><h3>Brand Identity Board: Kopi Contoh</h3><p>Papan identitas visual untuk brand fiktif: logo, palet warna, tipografi, dan kartu nama dalam satu tampilan.</p><p class="pf-sol"><b>Yang ditawarkan</b>Logo, palet warna, tipografi, dan panduan brand yang konsisten.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Creative">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 2 CS WhatsApp -->
+    <article class="pf-tile t-ai" data-cat="ai" data-span="5">
+      <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
+        <div class="mk-chat"><div class="c-h"><i></i><b>Toko Contoh</b><small>online</small></div><p class="me">Ada kemeja putih ukuran M?</p><p class="bot">Ada. Harga contoh Rp189.000. Mau saya catat pesanannya?</p><div class="c-q"><span>Pesan sekarang</span><span>Lihat katalog</span></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo AI</span><h3>CS WhatsApp untuk toko online</h3><p>Percakapan chatbot yang menjawab pertanyaan, menampilkan katalog, dan mencatat pesanan.</p><p class="pf-sol"><b>Yang ditawarkan</b>Balasan FAQ otomatis, katalog dan harga, serta handover ke admin manusia.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20AI">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 3 Dasbor -->
+    <article class="pf-tile t-ai" data-cat="ai" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
+        <div class="mk-dash"><div class="d-h"><b>Rekap harian</b><small>data contoh</small></div><div class="d-k"><div><small>Pesan</small><b>128</b></div><div><small>Order</small><b>24</b></div><div><small>Stok tipis</small><b>3</b></div></div><div class="d-b"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:78%"></i><i style="--h:58%"></i><i style="--h:90%"></i><i style="--h:70%"></i></div><div class="d-a">Stok produk A hampir habis</div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo AI</span><h3>Dasbor rekap penjualan</h3><p>Ringkasan pesanan harian yang dikirim otomatis ke WhatsApp atau Telegram.</p><p class="pf-sol"><b>Yang ditawarkan</b>Rekap penjualan harian, alert stok menipis, dan laporan berkala.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20AI">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 4 Formatting before/after -->
+    <article class="pf-tile t-ed" data-cat="ed" data-span="8">
+      <div class="pf-vis"><span class="pf-lbl">Sample</span>
+        <div class="mk-cmp" style="--pos:50%">
+          <div class="p-doc p-after"><em>Sesudah</em><h5>BAB III</h5><h6>METODE PENELITIAN</h6><i class="j" style="--k:0"></i><i class="j"></i><i class="j"></i><i class="j" style="width:62%"></i><i class="j in"></i><i class="j"></i><i class="j" style="width:48%"></i></div>
+          <div class="p-doc p-before"><em>Sebelum</em><h5>bab 3</h5><h6>metode penelitian</h6><i style="width:88%"></i><i style="width:96%;margin-left:6px"></i><i style="width:70%"></i><i style="width:92%;margin-left:-4px"></i><i style="width:80%"></i><i style="width:55%;margin-left:10px"></i><i style="width:84%"></i></div>
+          <input type="range" class="pf-rng" min="0" max="100" value="50" aria-label="Geser untuk membandingkan naskah sebelum dan sesudah diformat">
+          <span class="p-handle" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Edu</span><h3>Formatting naskah sesuai pedoman</h3><p>Perbandingan naskah sebelum dan sesudah dirapikan. Geser untuk melihat bedanya.</p><p class="pf-sol"><b>Yang ditawarkan</b>Margin, penomoran, daftar isi otomatis, serta tabel dan gambar sesuai pedoman kampus.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Edu">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 5 Feed -->
+    <article class="pf-tile t-cr" data-cat="cr" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Sample</span>
+        <div class="mk-feed"><div class="f-h"><i>K</i><b>kopicontoh</b><small>akun fiktif</small></div><div class="f-g"><i style="--bg:#7657E8;color:#FFC83D">Menu</i><i style="--bg:#FFC83D;color:#17172B">Promo</i><i style="--bg:#17172B;color:#F7F6F2">Baru</i><i style="--bg:#F7F6F2;color:#7657E8">Tips</i><i style="--bg:#7657E8;color:#F7F6F2">Cerita</i><i style="--bg:#FFC83D;color:#7657E8">Event</i><i style="--bg:#17172B;color:#FFC83D">Menu</i><i style="--bg:#F7F6F2;color:#17172B">Info</i><i style="--bg:#7657E8;color:#FFC83D">Promo</i></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Creative</span><h3>Feed Instagram satu gaya</h3><p>Contoh grid feed dengan warna, tipografi, dan layout yang seragam.</p><p class="pf-sol"><b>Yang ditawarkan</b>Template dan desain konten media sosial yang konsisten dengan brand.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Creative">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 6 Workflow -->
+    <article class="pf-tile t-ai" data-cat="ai" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
+        <div class="mk-flow"><div class="w-n"><i>1</i>Form order masuk</div><s></s><div class="w-n"><i>2</i>Dicatat ke Google Sheets</div><s></s><div class="w-n core"><i>3</i>Invoice PDF dibuat</div><s></s><div class="w-n"><i>4</i>Owner diberi notifikasi</div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo AI</span><h3>Alur order ke Sheets dan invoice</h3><p>Order dari form tercatat otomatis, invoice dibuat, dan owner langsung tahu.</p><p class="pf-sol"><b>Yang ditawarkan</b>Workflow n8n dari form order ke Google Sheets, invoice PDF otomatis, dan notifikasi.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20AI">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 7 Proofreading -->
+    <article class="pf-tile t-ed" data-cat="ed" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Sample</span>
+        <div class="mk-proof"><b>Penelitian ini <del>mengunakan</del><ins>menggunakan</ins> pendekatan kuantitatif dengan metode <del>survey</del><ins>survei</ins>. Data dikumpulkan melalui kuesioner, kemudian dianalisis secara <del>deskriptip</del><ins>deskriptif</ins>.</b><div class="pr-k"><span>Ejaan</span><span>Tanda baca</span><span>Kalimat</span></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Edu</span><h3>Proofreading bahasa Indonesia</h3><p>Contoh koreksi ejaan, tanda baca, dan kalimat pada naskah akademik.</p><p class="pf-sol"><b>Yang ditawarkan</b>Pemeriksaan ejaan (PUEBI), tata kalimat, dan konsistensi istilah.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Edu">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 8 Asisten dokumen -->
+    <article class="pf-tile t-ai" data-cat="ai" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
+        <div class="mk-chat k2"><div class="c-h"><i></i><b>Asisten SOP</b><small>knowledge bot</small></div><p class="me">Bagaimana prosedur retur barang?</p><p class="bot">Retur diajukan lewat formulir, lalu admin mengecek kondisi barang.<span class="src">SOP Retur.pdf, hlm. 3</span></p></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo AI</span><h3>Asisten dokumen (knowledge bot)</h3><p>Tanya jawab dari dokumen SOP, dengan sumber yang tampil di setiap jawaban.</p><p class="pf-sol"><b>Yang ditawarkan</b>Jawaban berdasarkan dokumenmu sendiri, lengkap dengan sumbernya.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20AI">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 9 Pitch deck -->
+    <article class="pf-tile t-cr" data-cat="cr" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Sample</span>
+        <div class="mk-deck"><div class="s2"><b>Masalah</b><i></i><i></i></div><div class="s1"><small>Pitch Deck</small><b>Kopi Contoh</b><u></u></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Creative</span><h3>Pitch deck dan company profile</h3><p>Contoh slide presentasi bisnis yang rapi dan mudah diikuti.</p><p class="pf-sol"><b>Yang ditawarkan</b>Presentasi dan company profile dengan layout, ikon, dan infografis.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Creative">Minta solusi serupa</a></div>
+    </article>
+
+    <!-- 10 Materi belajar -->
+    <article class="pf-tile t-ed" data-cat="ed" data-span="4">
+      <div class="pf-vis"><span class="pf-lbl">Sample</span>
+        <div class="mk-lesson"><div class="l-h"><i>M</i><div><b>Modul 2: Statistika Dasar</b><small>materi contoh</small></div></div><ul><li class="ok">Poin utama</li><li class="ok">Contoh soal</li><li>Latihan mandiri</li></ul><div class="l-bar"><i></i></div><div class="l-q"><b>Latihan cepat</b><span>Mean adalah…</span><div><u>Rata-rata</u><u>Nilai tengah</u></div></div></div>
+      </div>
+      <div class="pf-inf"><span class="pf-cat">Dippo Edu</span><h3>Materi belajar ringkas</h3><p>Contoh modul belajar dengan poin utama, latihan, dan penanda progres.</p><p class="pf-sol"><b>Yang ditawarkan</b>Bimbingan belajar dan materi yang disusun sesuai kebutuhan siswa atau mahasiswa.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Edu">Minta solusi serupa</a></div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ===== CTA ===== -->
+<section class="pf-cta"><div class="wrap"><div class="pf-ctab">
+  <h2>Punya kebutuhan serupa?</h2>
+  <p>Ceritakan masalahmu. Kami bantu pilih layanan dan rancang solusi yang cocok.</p>
+  <div class="btns"><a class="btn" href="kontak.html">Konsultasi sekarang</a><a class="btn alt" href="index.html#layanan">Lihat layanan</a></div>
+</div></div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/shared.js"></script>
+<script src="js/main.js"></script>
+<script src="js/portofolio.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>
