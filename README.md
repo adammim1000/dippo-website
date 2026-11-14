@@ -32,7 +32,7 @@ dippo-website/
 3. Klik dua kali `index.html`. Website terbuka di browser.
 4. Klik menu di atas untuk pindah halaman.
 
-Catatan: font (Bricolage Grotesque dan Plus Jakarta Sans) sudah disimpan di folder `assets/fonts` dan dimuat lewat `css/fonts.css`, jadi tampil sama tanpa internet.
+Catatan: font (Plus Jakarta Sans) sudah disimpan di folder `assets/fonts` dan dimuat lewat `css/fonts.css`, jadi tampil sama tanpa internet.
 
 ## 2. Cara mengubah teks
 
@@ -177,7 +177,7 @@ Cara mengubah teks berjalan: cari `class="marq"` di `index.html`, lalu ubah isi 
 
 Satu file, dimuat **paling akhir** di semua halaman. Semua ukuran font, jarak antar-section, lebar container, dan gutter diatur lewat variabel di `:root` bagian atas file.
 
-- **Font (2 keluarga):** Bricolage Grotesque untuk judul, Plus Jakarta Sans untuk teks.
+- **Font (1 keluarga):** Plus Jakarta Sans untuk semua teks dan judul di semua halaman.
 - **Skala tipografi (fluid, memakai `clamp()`):** `--fs-display` (hero Beranda), `--fs-h1` (judul halaman), `--fs-h2` (judul section), `--fs-h3-lg`, `--fs-h3`, `--fs-h4` (judul card), `--fs-lead`, `--fs-body`, `--fs-sm`, `--fs-xs`, `--fs-2xs`, `--fs-num` (angka harga). Line-height, letter-spacing, dan weight: `--lh-*`, `--ls-*`, `--fw-*`.
 - **Skala spacing (kelipatan 4px):** `--s-1` … `--s-9`; jarak antar-section `--sec` (dan `--sec-sm` untuk hero halaman), gutter `--gut`, padding card `--card-pad`, jarak grid `--gap`.
 - **Container:** `--container` (1200px) dipakai semua `.wrap`, navbar, dan kotak CTA, sehingga tepi konten sama di semua section. Lebar teks dibatasi `--measure` dan `--measure-lead`.
@@ -196,3 +196,37 @@ Tanpa library animasi: hanya CSS (transform/opacity), Intersection Observer, dan
 - **Maskot:** klik maskot di hero untuk melihat ia menyapa ("Halo!"). Hero halaman layanan punya parallax ringan mengikuti kursor (hanya perangkat dengan kursor halus).
 - **prefers-reduced-motion:** semua animasi, hover bergerak, dan efek JS dimatikan; konten langsung tampil dan semua fungsi tetap berjalan.
 - Menambah reveal pada elemen baru: tambahkan selektornya ke daftar `groups` di `js/motion.js` (bagian 3).
+
+## 16. Redesign Beranda: menu atas dan hero baru
+
+- **Menu atas** dibuat dari `js/shared.js` (isi menu di daftar `MENU`, gaya di `css/nav.css`). Sama di semua halaman. Tombol putih (`.rb.ghost`) dan biru (`.rb.primary`). Warna biru diatur di `--rb` bagian atas `css/nav.css`.
+- **Hero Beranda** ada di `index.html` (`<section class="rh">`), gayanya di `css/hero.css`. Tanpa maskot.
+- **Mengganti gambar kartu mengambang:** timpa file di `assets/hero/` dengan nama yang sama.
+  `gambar-1.png` chat (besar kiri), `gambar-2.png` dokumen (besar kanan), `gambar-3.png` brand (sedang kanan), `gambar-4.png` dashboard (sedang kiri), `gambar-5.png` dan `gambar-6.png` (kotak kecil kiri dan kanan atas). Gambar sekarang hanya contoh sementara.
+- **Efek:** kartu mengambang pelan, lalu membesar saat kursor diarahkan. Semua gerak berhenti jika pengguna memilih "kurangi animasi".
+- **Font:** semua halaman memakai Plus Jakarta Sans (Bricolage Grotesque dihapus).
+
+## 17. Bagian "Tiga layanan, satu tim" (tata letak bento)
+
+- Ada di `index.html` (`<section class="rs" id="layanan">`), gaya di `css/services.css`, gerakan di `js/float.js`.
+- Susunan: kartu besar Dippo AI di kiri, Dippo Creative dan Dippo Edu bertumpuk di kanan, simpul "D / Satu tim" di pertemuan ketiganya. Di layar kecil semua kartu tersusun ke bawah.
+- Gambar mengambang dan menjorok keluar dari tepi kartu, membesar saat kursor diarahkan, dan ikut bergeser halus mengikuti kursor (hanya di komputer). Kartu muncul bertahap saat discroll.
+- Gambar: `assets/hero/gambar-*.png` (contoh sementara; timpa dengan nama sama). AI = 1, 4, 5. Creative = 3, 7, 6. Edu = 2, 9, 8.
+
+## 18. Cara kerjanya, Kenapa Dippo, Pertanyaan umum, Ajakan bawah
+
+- HTML di `index.html` (`#cara`, `#kenapa`, `#faq`, `#mulai`), gaya di `css/sections.css`. Gayanya sama dengan hero dan layanan: bingkai terang, titik-titik, kartu mengambang yang membesar saat hover.
+- Cara kerjanya: tiga langkah bernomor dihubungkan garis putus-putus, tiap langkah punya kartu contoh mengambang.
+- Kenapa Dippo: bento 4 kartu dengan dekorasi kecil (ikon layanan, balon chat, contoh bahasa mudah, rantai proses).
+- Pertanyaan umum: judul dan tombol WhatsApp di kiri (menempel saat digulir), daftar tanya-jawab di kanan dengan ikon + yang berputar.
+- Ajakan bawah: bingkai seperti hero dengan 4 kartu gambar (`gambar-3`, `-1`, `-5`, `-6`). Maskot dihapus dari bagian ini.
+- Footer ikut diselaraskan (latar putih kebiruan, watermark biru) di semua halaman.
+- Judul bagian yang tidak ingin dipecah animasinya diberi `class="nosplit"` (lihat `js/main.js`).
+
+## 19. Penyelarasan halaman lain
+
+- Semua halaman (Dippo AI, Creative, Edu, Portofolio, Kontak) sekarang memakai hero bergaya Beranda: bingkai terang, titik-titik, kartu gambar mengambang. Tanpa maskot.
+- Warna ungu diganti biru di seluruh situs. Tombol biru (`.btn` dan `.rb primary`) dan putih berbingkai biru (`.rb ghost`). Warna aksen Creative (amber) dan Edu (hijau) tetap untuk judul dan kartu, sesuai identitas layanannya.
+- `css/pages.css` berisi penyelarasan halaman lain dan dimuat paling akhir. `css/hero.css` dipakai bersama oleh semua hero.
+- Gambar kartu hero halaman layanan: `assets/hero/gambar-*.png` (contoh sementara). Dippo AI = 1, 4, 5, 6. Creative = 3, 7, 6. Edu = 2, 9, 8, 6. Portofolio = 1, 2, 5, 6. Timpa dengan gambarmu (nama sama).
+- Halaman Kontak: formulir dalam kartu putih di dalam bingkai, dengan email dan WhatsApp. Pengiriman ke WhatsApp tidak berubah.

@@ -1,0 +1,65 @@
+/* =====================================================================
+   Penyelarasan halaman Dippo AI, Creative, Edu, Portofolio, Kontak
+   dengan gaya Beranda (putih-biru, bingkai terang, kartu mengambang).
+   Muat file ini TERAKHIR.
+   ===================================================================== */
+
+/* Tombol: biru + putih di semua halaman */
+.btn{background:#2F5BFF!important;color:#fff!important;border:1.5px solid #2F5BFF!important;border-radius:12px;box-shadow:0 10px 26px -8px rgba(47,91,255,.55)!important;transition:transform .2s cubic-bezier(.2,.7,.2,1),background .2s,box-shadow .2s}
+.btn:hover{background:#1E43D6!important;transform:translateY(-2px)}
+.btn.line,.btn.alt,.btn.light{background:#fff!important;color:#2F5BFF!important;box-shadow:none!important}
+.btn.line:hover,.btn.alt:hover,.btn.light:hover{background:#E8EEFF!important}
+
+/* Hero halaman layanan */
+.rp .rh-frame{min-height:max(620px,calc(100svh - 120px))}
+.rp .rh-center{padding-bottom:210px}
+.rp-tag{display:inline-block;margin-bottom:20px;padding:7px 16px;border-radius:999px;background:#fff;border:1px solid #E6E9F5;font-size:13px;font-weight:700;color:var(--brand,#2F5BFF)}
+.rp .rh-center h1{font-size:clamp(2.3rem,5vw,4.2rem);margin:0}
+.rp .rh-center h1 .b{color:var(--brand,#2F5BFF)}
+.rp .rh-lead{max-width:600px}
+body.t-creative .rp .rh-cta .rb.primary,body.t-edu .rp .rh-cta .rb.primary{background:#2F5BFF}
+
+/* Pusat peta industri: tile D menggantikan maskot */
+.ctr .ti .dm{display:grid;place-items:center;width:60px;height:60px;border-radius:18px;background:#17172B;color:#fff;font-size:32px;font-weight:800}
+@media(max-width:800px){.ctr .ti .dm{width:44px;height:44px;font-size:24px;border-radius:13px}}
+
+/* Kartu dan bagian: sudut lebih bulat, garis dan latar putih kebiruan */
+section.alt{background:#F4F6FC}
+.ticker{background:#fff;border-color:#E6E9F5}
+
+@media(max-width:1180px){.rp .a2,.rp .a4{display:none}}
+@media(max-width:760px){.rp .rh-center{padding-bottom:300px}.rp .rh-frame{min-height:780px}.rp .a1,.rp .a3{display:none}.rp .a5{left:-34px;bottom:-34px}.rp .a7{right:-34px;bottom:-34px}}
+
+/* layanan.css punya kelas .a1-.a4 sendiri; jangan ikut mewarnai kartu mengambang */
+.fc.a1,.fc.a2,.fc.a3,.fc.a4{background:none}
+
+/* Portofolio: legenda dan kartu label bertautan */
+.rp-leg{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:30px 0 0;padding:0;list-style:none}
+.rp-leg li{display:flex;flex-direction:column;gap:2px;padding:10px 16px;border-radius:14px;background:#fff;border:1px solid #E6E9F5;text-align:left}
+.rp-leg b{font-size:13px;font-weight:800;color:#17172B}.rp-leg span{font-size:12px;color:#6B7194}
+.fc.lbl .k{display:block;margin-bottom:6px;font-size:11px;font-weight:700;color:#2F5BFF}
+.fc.lbl small{display:block;margin-top:3px;font-size:11px;font-weight:600;color:#6B7194;line-height:1.4}
+a.fc{text-decoration:none;color:inherit}
+.fc.pill .fc-in{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:800;color:#17172B;white-space:nowrap}
+.fc.pill .fc-in i{width:8px;height:8px;margin:0;border-radius:50%;background:#22C55E}
+@media(max-width:1180px){.rp .a6,.rp .a8{display:none}}
+.rp .rh-center{padding-bottom:230px}
+
+/* Kontak */
+.rk .rh-frame{display:block;min-height:0;padding:clamp(28px,5vw,72px) clamp(20px,5vw,72px)}
+.rk-grid{position:relative;z-index:5;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center;max-width:1100px;margin:0 auto}
+.rk-tx .rh-mark{margin:0 0 28px}
+.rk-tx h1{margin:0;font-weight:800;font-size:clamp(2.6rem,5.6vw,4.6rem);line-height:1.06;letter-spacing:-.035em;color:#0F1222}
+.rk-tx h1 .b{color:#2F5BFF}
+.rk-tx .rh-lead{margin:18px 0 0;max-width:40ch}
+.rk-info{display:grid;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+.rk-info li{display:flex;align-items:center;gap:12px;font-weight:700;color:#17172B}
+.rk-info i{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid #E6E9F5;font-style:normal;font-size:12px;font-weight:800;color:#2F5BFF;box-shadow:0 10px 22px -14px rgba(23,23,43,.4)}
+.rk-form{display:grid;gap:16px;padding:clamp(22px,3vw,36px);border-radius:24px;background:#fff;border:1px solid #E6E9F5;box-shadow:0 30px 60px -36px rgba(23,23,43,.4)}
+.rk-form label{display:grid;gap:8px;font-size:14px;font-weight:700;color:#17172B}
+.rk-form input,.rk-form select,.rk-form textarea{width:100%;padding:13px 16px;border:1.5px solid #E6E9F5;border-radius:14px;background:#F8F9FD;font:500 15px/1.4 'Plus Jakarta Sans',system-ui,sans-serif;color:#17172B;transition:border-color .2s,box-shadow .2s,background .2s}
+.rk-form textarea{min-height:130px;resize:vertical}
+.rk-form input:focus,.rk-form select:focus,.rk-form textarea:focus{outline:0;border-color:#2F5BFF;background:#fff;box-shadow:0 0 0 4px rgba(47,91,255,.14)}
+.rk-form .rb{height:52px;margin-top:4px;font-size:16px}
+.rk .fc.a1{left:3%;top:5%}.rk .fc.a4{right:3%;top:5%}.rk .fc.a5{left:5%;bottom:5%}
+@media(max-width:900px){.rk-grid{grid-template-columns:1fr}.rk .fc.a1,.rk .fc.a4,.rk .fc.a5{display:none}}

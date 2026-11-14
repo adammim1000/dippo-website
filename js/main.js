@@ -21,7 +21,7 @@ if ('IntersectionObserver' in window) {
     if (t.classList.contains('rv')) setTimeout(() => t.classList.remove('rv', 'in'), 1500);
   }), { threshold: .2 });
   document.querySelectorAll('main h2').forEach(h => {
-    if (h.closest('.hero') || h.closest('.sub')) return;
+    if (h.closest('.hero') || h.closest('.sub') || h.classList.contains('nosplit')) return;
     h.innerHTML = h.textContent.split(' ').map((w, i) => `<span class="w"><span style="--k:${i}">${w}</span></span> `).join('');
     h.classList.add('split'); io.observe(h);
   });

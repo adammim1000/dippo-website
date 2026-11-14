@@ -1,6 +1,6 @@
 
-:root{--bg:#F7F6F2;--alt:#EFEDE6;--surface:#FDFCFA;--text:#17172B;--muted:#5D5C73;color-scheme:light;--gold:#FFC83D;--line:#E4E1D8;--navy:#17172B;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{--brand:#7657e8;--b26:#5a3fc4;--b2b:#6a4bd6;--b4a:#8a70f0;--b5d:#9b84f5;--bcf:#dcd3ff;--be3:#ece7ff;--bea:#f1edff;--b10:#17172b;--b16:#221f4a;--b1c:#2b2660;--brgb:118,87,232;--b9rgb:177,157,255;--b5rgb:155,132,245}
+:root{--bg:#fff;--alt:#F4F6FC;--surface:#fff;--text:#17172B;--muted:#5B6280;color-scheme:light;--gold:#FFC83D;--line:#E6E9F5;--navy:#17172B;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{--brand:#2F5BFF;--b26:#1E3FC2;--b2b:#2549E0;--b4a:#5578FF;--b5d:#7E9BFF;--bcf:#D5DFFF;--be3:#E8EEFF;--bea:#F0F4FF;--b10:#0F1530;--b16:#17224A;--b1c:#1D2C66;--brgb:47,91,255;--b9rgb:150,175,255;--b5rgb:126,155,255}
 body.t-creative{--brand:#a66a00;--b26:#7a4d00;--b2b:#8f5a00;--b4a:#c98a10;--b5d:#e0a52a;--bcf:#ffe29a;--be3:#fff1cf;--bea:#fff6dd;--b10:#2a1d00;--b16:#3a2800;--b1c:#4a3300;--brgb:166,106,0;--b9rgb:255,214,120;--b5rgb:224,165,42}
 body.t-edu{--brand:#0c8576;--b26:#09665a;--b2b:#0a7366;--b4a:#14a593;--b5d:#2cc4af;--bcf:#a8f0e4;--be3:#cff5ee;--bea:#ddf8f3;--b10:#08332d;--b16:#0b433b;--b1c:#0e554b;--brgb:12,133,118;--b9rgb:120,235,215;--b5rgb:44,196,175}
 
@@ -242,4 +242,4 @@ body.t-edu #layanan .card:nth-child(4) .ico{-webkit-mask:url("data:image/svg+xml
 .pn small{text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400}
 .pcards.one{max-width:none}
 
-h1,h2,h3,.logo{font-family:'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:'Plus Jakarta Sans',system-ui,sans-serif}

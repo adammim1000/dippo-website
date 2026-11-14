@@ -73,7 +73,7 @@
 
   /* ---------- Demo 2: brand preview ---------- */
   const board = $('#cr-board'), name = $('#cr-name');
-  const PAL = [['#7657E8', '#FFC83D', '#17172B'], ['#17172B', '#2DD4BF', '#7657E8'], ['#FFC83D', '#17172B', '#7657E8'], ['#E8553D', '#F7F6F2', '#17172B']];
+  const PAL = [['#2F5BFF', '#FFC83D', '#17172B'], ['#17172B', '#2DD4BF', '#2F5BFF'], ['#FFC83D', '#17172B', '#2F5BFF'], ['#E8553D', '#F7F6F2', '#17172B']];
   const paintBrand = () => {
     const n = name.value.trim() || 'Nama Brand';
     ['cr-word', 'cr-word2', 'cr-word3'].forEach(id => { $('#' + id).textContent = n; });

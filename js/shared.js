@@ -5,16 +5,29 @@ const EMAIL = 'halodippo@gmail.com';
 // ==========================================================
 
 // Menu dan tombol WhatsApp dibuat dari sini, jadi sama di semua halaman.
-const MENU = [['index.html','Beranda'],['dippo-ai.html','Dippo AI'],['dippo-creative.html','Dippo Creative'],['dippo-edu.html','Dippo Edu'],['portofolio.html','Portofolio']];
+const MENU = [['index.html','Beranda'],['dippo-ai.html','Dippo AI'],['dippo-creative.html','Dippo Creative'],['dippo-edu.html','Dippo Edu']];
 const hal = location.pathname.split('/').pop() || 'index.html';
 const tujuanKontak = document.getElementById('kontak') ? '#kontak' : 'kontak.html';
+const links = MENU.map(([u, t]) => `<a href="${u}"${u === hal ? ' class="on" aria-current="page"' : ''}>${t}</a>`).join('');
 
 document.body.insertAdjacentHTML('afterbegin', `
-<div class="sh" role="banner"><div class="shw"><div class="sn" role="navigation" aria-label="Menu utama">
-  <a class="sn-logo" href="index.html"><img src="assets/maskot-dippo.png" alt="">Dippo</a>
-  <ul>${MENU.map(([u, t]) => `<li><a href="${u}"${u === hal ? ' class="on" aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul>
-  <a class="sn-cta" href="${tujuanKontak}">Hubungi Tim Kami</a>
-</div></div></div>`);
+<div class="rn" role="banner"><div class="rn-in">
+  <a class="rn-logo" href="index.html"><i>D</i>Dippo</a>
+  <div class="rn-links" id="rn-links" role="navigation" aria-label="Menu utama">${links}
+    <a class="rn-m" href="portofolio.html"${hal === 'portofolio.html' ? ' aria-current="page"' : ''}>Portofolio</a>
+  </div>
+  <div class="rn-act">
+    <a class="rb ghost sm rn-d" href="portofolio.html">Portofolio</a>
+    <a class="rb primary sm" href="${tujuanKontak}">Hubungi Tim Kami</a>
+    <button class="rn-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="rn-links"><span></span><span></span></button>
+  </div>
+</div></div>`);
+(() => {
+  const h = document.querySelector('.rn'), b = h.querySelector('.rn-btn');
+  b.addEventListener('click', () => { const o = h.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  h.querySelectorAll('.rn-links a').forEach(a => a.addEventListener('click', () => { h.classList.remove('open'); b.setAttribute('aria-expanded', false); }));
+  const f = () => h.classList.toggle('sc', scrollY > 8); f(); addEventListener('scroll', f, { passive: true });
+})();
 
 document.body.insertAdjacentHTML('beforeend', `
 <a class="wab" href="https://wa.me/${NOMOR_WA}?text=${encodeURIComponent('Halo Dippo, saya ingin berkonsultasi')}" target="_blank" rel="noopener" aria-label="Konsultasikan dulu yuk lewat WhatsApp">

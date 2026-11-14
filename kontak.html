@@ -8,27 +8,40 @@
 <link rel="icon" href="assets/maskot-dippo.png">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/nav.css"><link rel="stylesheet" href="css/system.css"><link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/nav.css"><link rel="stylesheet" href="css/system.css"><link rel="stylesheet" href="css/motion.css"><link rel="stylesheet" href="css/hero.css"><link rel="stylesheet" href="css/pages.css">
 </head>
 <body class="">
 <main>
-<section class="sub"><div class="wrap">
-  <h1 style="color:var(--blue)">Hubungi Kami</h1>
-  <p class="lead">Isi formulir, lalu tekan Kirim lewat WhatsApp. Pesanmu otomatis terisi di WhatsApp, tinggal dikirim.</p>
-</div></section>
-<section><div class="wrap">
-  <form id="form-kontak">
-    <label>Nama lengkap<input name="nama" required autocomplete="name"></label>
-    <label>Jasa yang dibutuhkan
-      <select name="jasa" required><option>Dippo AI</option><option>Dippo Creative</option><option>Dippo Edu</option></select></label>
-    <label>Kebutuhan<textarea name="pesan" required placeholder="Ceritakan singkat apa yang kamu butuhkan"></textarea></label>
-    <button class="btn" type="submit">Kirim lewat WhatsApp</button>
-  </form>
-</div></section>
+<section class="rh rp rk" id="beranda">
+  <div class="rh-frame">
+    <div class="rh-dots" aria-hidden="true"></div>
+    <div class="rk-grid">
+      <div class="rk-tx">
+        <div class="rh-mark" aria-hidden="true"><b>D</b></div>
+        <h1><span>Hubungi</span> <span class="b">Kami</span></h1>
+        <p class="rh-lead">Isi formulir, lalu tekan Kirim lewat WhatsApp. Pesanmu otomatis terisi di WhatsApp, tinggal dikirim.</p>
+        <ul class="rk-info">
+          <li><i>@</i><span>halodippo@gmail.com</span></li>
+          <li><i>WA</i><span>+62 858-8900-2998</span></li>
+        </ul>
+      </div>
+      <form id="form-kontak" class="rk-form">
+        <label>Nama lengkap<input name="nama" required autocomplete="name"></label>
+        <label>Jasa yang dibutuhkan
+          <select name="jasa" required><option>Dippo AI</option><option>Dippo Creative</option><option>Dippo Edu</option></select></label>
+        <label>Kebutuhan<textarea name="pesan" required placeholder="Ceritakan singkat apa yang kamu butuhkan"></textarea></label>
+        <button class="rb primary" type="submit">Kirim lewat WhatsApp</button>
+      </form>
+    </div>
+    <div class="fc thm a4"><div class="fc-in"><img src="assets/hero/gambar-6.png" alt=""></div></div>
+    <div class="fc pill a5"><div class="fc-in"><i class="on"></i>Balasan langsung lewat WhatsApp</div></div>
+  </div>
+</section>
 </main>
 <div id="site-footer"></div>
 <script src="js/shared.js"></script>
 <script src="js/main.js"></script>
 <script src="js/motion.js"></script>
+<script src="js/float.js"></script>
 </body>
 </html>

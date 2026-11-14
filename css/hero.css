@@ -1,0 +1,89 @@
+/* =====================================================================
+   Hero Beranda (gaya baru): bingkai terang, titik-titik, kartu gambar mengambang.
+   Mengganti gambar: timpa file di assets/hero/ (gambar-1.png ... gambar-6.png).
+   ===================================================================== */
+.rh{padding:6px 16px 28px;background:#fff}
+.rh-frame{position:relative;overflow:hidden;isolation:isolate;min-height:max(680px,calc(100svh - 112px));
+  display:grid;place-items:center;border:1px solid #E6E9F5;border-radius:28px;
+  background:radial-gradient(900px 420px at 50% 28%,#fff,transparent 70%),#F4F6FC}
+.rh-dots{position:absolute;inset:0;z-index:-2;background-image:radial-gradient(#BFC7E4 1.1px,transparent 1.4px);background-size:14px 14px;
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 34%,#000,transparent 88%);mask-image:radial-gradient(ellipse 72% 70% at 50% 34%,#000,transparent 88%)}
+.rh-lines{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.rh-lines path{fill:none;stroke:#BFC7E4;stroke-width:1.6;stroke-dasharray:2 8;stroke-linecap:round}
+
+.rh-center{position:relative;z-index:5;text-align:center;max-width:900px;padding:64px 24px 230px}
+.rh-mark{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 32px;border-radius:18px;background:#fff;
+  box-shadow:0 18px 40px -14px rgba(23,23,43,.28),0 0 0 1px rgba(23,23,43,.04);animation:rh-bob 5s ease-in-out infinite}
+.rh-mark b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#17172B;color:#fff;font-size:20px;font-weight:800}
+.rh-center h1{margin:0;font-weight:800;font-size:clamp(2.4rem,5.3vw,4.5rem);line-height:1.08;letter-spacing:-.032em;color:#0F1222;text-wrap:balance}
+.rh-center h1 span{display:block}
+.rh-center h1 .b{color:#2F5BFF}
+.rh-lead{margin:22px auto 0;max-width:540px;font-size:clamp(.98rem,1.3vw,1.0625rem);line-height:1.65;color:#5B6280}
+.rh-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+.rh-chips a{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E6E9F5;color:#17172B;font-size:13px;font-weight:700;text-decoration:none;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .2s}
+.rh-chips a i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.rh-chips a:hover{transform:translateY(-2px) scale(1.04);border-color:var(--c)}
+.rh-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
+.rh-cta .rb{height:50px;padding:0 30px;font-size:15.5px}
+.rh-note{display:block;margin-top:16px;font-size:13px;color:#6B7194}
+
+/* Kartu mengambang: .fc = gerak mengambang, .fc-in = efek membesar saat hover */
+.fc{position:absolute;z-index:2;animation:rh-float var(--dur,6.5s) ease-in-out var(--dl,0s) infinite}
+.fc-in{display:block;overflow:hidden;border-radius:16px;background:#fff;border:1px solid rgba(23,23,43,.06);
+  box-shadow:0 20px 44px -20px rgba(23,23,43,.32);transform:rotate(var(--rot,0deg));
+  translate:calc(var(--px,0)*var(--d,12)*1px) calc(var(--py,0)*var(--d,12)*1px);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,translate .3s ease-out;will-change:transform;
+  animation:rh-in .9s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--in,.2s)}
+.fc:hover{z-index:20;animation-play-state:paused}
+.fc:hover .fc-in{transform:rotate(0deg) scale(1.18);box-shadow:0 32px 64px -22px rgba(23,23,43,.45)}
+.fc img{display:block;width:100%;height:auto}
+
+.fc.a1,.fc.a3{--d:34}.fc.a2,.fc.a4{--d:28}.fc.a6,.fc.a8{--d:20}.fc.a5,.fc.a7{--d:10}
+.fc.lbl .fc-in{width:152px;padding:13px 15px}
+.fc.lbl b{display:block;margin-bottom:9px;font-size:12px;font-weight:800;color:#17172B}
+.fc.lbl i{display:block;height:6px;margin-top:6px;border-radius:3px;background:#E3E7F5}
+.fc.lbl i:nth-of-type(2){width:84%}.fc.lbl i:nth-of-type(3){width:56%;background:#C9D6FF}
+.fc.thm .fc-in{width:96px;padding:5px;border-radius:18px}
+.fc.thm img{border-radius:13px}
+.fc.big .fc-in{width:clamp(230px,23vw,340px);border-radius:20px}
+.fc.mid .fc-in{width:clamp(170px,16vw,235px);border-radius:18px}
+
+.fc.a1{left:5%;top:8%;--dur:6.8s;--in:.15s}
+.fc.a2{left:14%;top:21%;--dur:5.6s;--dl:-1.4s;--in:.3s}
+.fc.a3{right:5%;top:9%;--dur:7.2s;--dl:-3s;--in:.2s}
+.fc.a4{right:14%;top:22%;--dur:6.2s;--dl:-.8s;--in:.35s}
+.fc.a5{left:2.5%;bottom:3%;--dur:7.6s;--dl:-2s;--in:.5s}
+.fc.a6{left:20%;bottom:-4%;--dur:6.4s;--dl:-3.5s;--in:.65s}
+.fc.a7{right:2.5%;bottom:4%;--dur:8s;--dl:-4s;--in:.55s}
+.fc.a8{right:20%;bottom:-4%;--dur:6.9s;--dl:-1s;--in:.7s}
+
+/* Ikon layanan di bawah teks */
+.rh-ico{position:absolute;left:50%;bottom:7%;z-index:6;display:flex;gap:16px;transform:translateX(-50%)}
+.rh-ico a{display:grid;place-items:center;width:64px;height:64px;border-radius:19px;background:#fff;border:1px solid rgba(23,23,43,.05);
+  box-shadow:0 16px 32px -14px rgba(23,23,43,.4);animation:rh-float 6s ease-in-out infinite;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.rh-ico .i1{rotate:-8deg;color:#2F5BFF}.rh-ico .i2{margin-top:22px;color:#D99A00;animation-delay:-2s;animation-duration:7s}.rh-ico .i3{rotate:8deg;color:#0C8576;animation-delay:-4s;animation-duration:6.5s}
+.rh-ico a:hover{transform:scale(1.2) rotate(0);animation-play-state:paused}
+.rh-ico svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+@keyframes rh-float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+@keyframes rh-bob{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes rh-in{from{opacity:0;scale:.88;translate:0 24px}}
+
+@media(max-width:1180px){
+  .fc.a2,.fc.a4,.fc.a6,.fc.a8{display:none}
+  .fc.a1{left:3%}.fc.a3{right:3%}
+  .fc.big .fc-in{width:clamp(200px,24vw,280px)}
+}
+@media(max-width:760px){
+  .rh{padding:4px 10px 20px}
+  .rh-frame{min-height:760px;border-radius:22px;align-items:start}
+  .fc.a1,.fc.a3{display:none}
+  .rh-center{padding:44px 18px 300px}
+  .rh-mark{margin-bottom:24px}
+  .fc.a5{left:-34px;bottom:-34px}.fc.a7{right:-34px;bottom:-34px}
+  .fc.big .fc-in{width:min(54vw,230px)}
+  .rh-ico{bottom:86px}
+  .rh-ico a{width:56px;height:56px}
+  .rh-cta .rb{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){.fc,.fc-in,.rh-mark,.rh-ico a{animation:none!important}}

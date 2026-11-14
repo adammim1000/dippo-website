@@ -3,11 +3,11 @@
    Dimuat PALING AKHIR di semua halaman. Ubah angka di :root untuk
    mengatur seluruh website; jangan menulis ukuran font/jarak baru
    di tempat lain, pakai token ini.
-   Dua keluarga font saja: Bricolage Grotesque (judul) + Plus Jakarta Sans (teks).
+   Satu font untuk semua halaman: Plus Jakarta Sans.
    ===================================================================== */
 :root{
   /* Font */
-  --font-head:'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif;
+  --font-head:'Plus Jakarta Sans',system-ui,sans-serif;
   --font-body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
 
   /* Skala tipografi (fluid, 16px dasar) */

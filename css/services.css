@@ -1,0 +1,112 @@
+/* =====================================================================
+   "Tiga layanan, satu tim": tata letak bento tidak simetris.
+   Satu kartu besar (AI) di kiri, dua kartu di kanan, simpul "D" di pertemuannya.
+   Gambar mengambang keluar dari tepi kartu. Ganti gambar: assets/hero/gambar-*.png
+   ===================================================================== */
+.rs{padding:56px 16px 44px;background:#fff;overflow-x:clip}
+.rs-head{text-align:center;max-width:760px;margin:0 auto 44px;padding:0 8px}
+.rs-head h2{margin:0;font-weight:800;font-size:clamp(2.2rem,4.8vw,4rem);line-height:1.08;letter-spacing:-.032em;color:#0F1222;text-wrap:balance;max-width:none}
+.rs-head h2 .b{color:#2F5BFF}
+.rs-head .rh-lead{margin-top:18px}
+
+.rs-bento{position:relative;display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:auto auto;gap:18px;max-width:1400px;margin:0 auto}
+.rs-card{--ac:#2F5BFF;--tint:rgba(47,91,255,.10);position:relative;isolation:isolate;display:flex;flex-direction:column;
+  padding:clamp(24px,3vw,46px);border:1px solid #E6E9F5;border-radius:28px;background:#F4F6FC;scroll-margin-top:92px;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s,opacity .8s,translate .8s cubic-bezier(.2,.7,.2,1)}
+.rs-card.cr{--ac:#D99A00;--tint:rgba(255,200,61,.22)}
+.rs-card.ed{--ac:#0C8576;--tint:rgba(20,184,166,.16)}
+.rs-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--ac) 45%,#E6E9F5);box-shadow:0 30px 60px -34px rgba(23,23,43,.35)}
+.rs-bg{position:absolute;inset:0;z-index:-1;border-radius:inherit;overflow:hidden;
+  background:radial-gradient(520px 300px at 100% 0,var(--tint),transparent 70%)}
+.rs-bg::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .35s;background:radial-gradient(340px circle at var(--mx,50%) var(--my,0%),var(--tint),transparent 65%)}
+.rs-card:hover .rs-bg::after{opacity:1}
+.rs-bg .rh-dots{-webkit-mask-image:radial-gradient(ellipse 80% 80% at 60% 40%,#000,transparent 92%);mask-image:radial-gradient(ellipse 80% 80% at 60% 40%,#000,transparent 92%)}
+.rs-card.ai{grid-row:1/3}
+
+.rs-top{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.rs-mark{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:#fff;color:var(--ac);
+  box-shadow:0 16px 34px -14px rgba(23,23,43,.3),0 0 0 1px rgba(23,23,43,.04);animation:rh-bob 5s ease-in-out infinite}
+.rs-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.rs-tag{padding:6px 13px;border-radius:999px;background:#fff;border:1px solid #E6E9F5;font-size:12.5px;font-weight:700;color:#17172B}
+.rs-tx{position:relative;z-index:5}
+.rs-tx h3{margin:0;font-weight:800;font-size:clamp(1.7rem,2.1vw,2.05rem);white-space:nowrap;line-height:1.06;letter-spacing:-.032em;color:#0F1222}
+.rs-card.ai .rs-tx h3{font-size:clamp(2.3rem,4.4vw,3.9rem)}
+.rs-tx p{margin:14px 0 0;max-width:40ch;font-size:clamp(.95rem,1.2vw,1.04rem);line-height:1.62;color:#5B6280}
+.rs-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.rs-cta .rb{height:46px;padding:0 24px}
+
+/* Panggung gambar */
+.rs-stage{position:relative;container-type:inline-size;z-index:2}
+.rs-stage .fc-in{animation:none;border-radius:16px}
+.rs-stage .fc.big .fc-in{width:58cqw}
+.rs-stage .fc.mid .fc-in{width:36cqw}
+.rs-stage .fc.thm .fc-in{width:18cqw;padding:.9cqw;border-radius:2.6cqw}
+.rs-stage .fc.thm img{border-radius:2cqw}
+.rs-stage .fc.pill .fc-in{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:800;color:#17172B;white-space:nowrap}
+.rs-stage .fc.pill i{width:8px;height:8px;border-radius:50%;background:#22C55E}
+
+/* AI: kartu tinggi, panggung di bawah teks, gambar menjorok keluar tepi bawah */
+.rs-card.ai .rs-stage{flex:1;min-height:420px;margin-top:18px}
+.rs-card.ai .rs-stage .fc.big .fc-in{width:58cqw}
+.rs-card.ai .p1{left:-2%;bottom:-9%}
+.rs-card.ai .p2{right:-1%;bottom:12%}
+.rs-card.ai .p3{right:6%;top:-2%}
+.rs-card.ai .p4{left:8%;top:14%}
+.rs-card.ai .rs-stage .fc.mid .fc-in{width:38cqw}
+.rs-card.ai .rs-stage .fc.thm .fc-in{width:15cqw}
+
+/* Creative dan Edu: teks di kiri, gambar menjorok ke tepi kanan */
+.rs-card.cr,.rs-card.ed{min-height:360px;justify-content:center}
+.rs-card.cr .rs-tx,.rs-card.ed .rs-tx{max-width:50%}
+.rs-card.cr .rs-stage,.rs-card.ed .rs-stage{position:absolute;right:-3%;top:8%;width:52%;height:84%}
+.rs-card.cr .p1,.rs-card.ed .p1{left:0;top:12%}
+.rs-card.cr .p2,.rs-card.ed .p2{right:0;bottom:0}
+.rs-card.cr .p3,.rs-card.ed .p3{right:10%;top:-2%}
+.rs-card.cr .rs-stage .fc.big .fc-in,.rs-card.ed .rs-stage .fc.big .fc-in{width:64cqw}
+.rs-card.cr .rs-stage .fc.mid .fc-in,.rs-card.ed .rs-stage .fc.mid .fc-in{width:44cqw}
+.rs-card.cr .rs-stage .fc.thm .fc-in,.rs-card.ed .rs-stage .fc.thm .fc-in{width:20cqw}
+
+/* Simpul "satu tim" di pertemuan ketiga kartu */
+.rs-hub{position:absolute;z-index:9;left:calc((100% - 18px)*.5918 + 9px);top:50%;translate:-50% -50%;display:grid;place-items:center;pointer-events:none}
+.rs-hub b{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:19px;background:#fff;color:#fff;
+  box-shadow:0 18px 40px -12px rgba(23,23,43,.4),0 0 0 1px rgba(23,23,43,.05);animation:rh-bob 5s ease-in-out infinite;font-size:0}
+.rs-hub b::before{content:"D";display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#17172B;color:#fff;font-size:20px;font-weight:800}
+.rs-hub i{position:absolute;width:104px;height:104px;border-radius:50%;border:1.6px dashed #9FAEEA;animation:rs-spin 24s linear infinite}
+.rs-hub span{position:absolute;top:calc(100% + 18px);padding:5px 12px;border-radius:999px;background:#17172B;color:#fff;font-size:12px;font-weight:700;white-space:nowrap}
+@keyframes rs-spin{to{rotate:360deg}}
+
+/* muncul saat discroll (hanya jika JS jalan) */
+.js .rs-card:not(.in){opacity:0;translate:0 34px}
+.js .rs-card:not(.in) .fc-in{opacity:0;scale:.88}
+.rs-card.in .fc-in{animation:rh-in .9s cubic-bezier(.2,.7,.2,1) backwards}
+.rs-card.in .p2 .fc-in{animation-delay:.15s}.rs-card.in .p3 .fc-in{animation-delay:.3s}.rs-card.in .p4 .fc-in{animation-delay:.45s}
+.rs-card.cr.in{transition-delay:.1s,0s,0s,.1s,.1s}.rs-card.ed.in{transition-delay:.2s,0s,0s,.2s,.2s}
+
+@media(max-width:1100px){
+  .rs-bento{grid-template-columns:1fr}
+  .rs-card.ai{grid-row:auto}
+  .rs-hub{display:none}
+  .rs-card.ai .rs-stage{min-height:0;aspect-ratio:16/8}
+  .rs-card.cr .rs-tx,.rs-card.ed .rs-tx{max-width:46%}
+  .rs-card.cr .rs-stage,.rs-card.ed .rs-stage{width:50%}
+  .rs-tx h3{white-space:normal}
+}
+@media(max-width:900px){
+  .rs{padding:36px 10px 28px}
+  .rs-bento{grid-template-columns:1fr}
+  .rs-card.ai{grid-row:auto}
+  .rs-hub{display:none}
+  .rs-card,.rs-card.cr,.rs-card.ed{min-height:0;border-radius:22px;padding:24px 20px 22px}
+  .rs-card.cr .rs-tx,.rs-card.ed .rs-tx{max-width:none}
+  .rs-tx p{max-width:none}
+  .rs-cta .rb{flex:1 1 auto}
+  .rs-card.ai .rs-stage,.rs-card.cr .rs-stage,.rs-card.ed .rs-stage{position:relative;right:auto;top:auto;width:100%;height:auto;aspect-ratio:4/3.3;min-height:0;margin-top:24px}
+  .rs-card.ai .rs-stage .fc.big .fc-in,.rs-card.cr .rs-stage .fc.big .fc-in,.rs-card.ed .rs-stage .fc.big .fc-in{width:60cqw}
+  .rs-card.ai .rs-stage .fc.mid .fc-in,.rs-card.cr .rs-stage .fc.mid .fc-in,.rs-card.ed .rs-stage .fc.mid .fc-in{width:38cqw}
+  .rs-card.ai .rs-stage .fc.thm .fc-in,.rs-card.cr .rs-stage .fc.thm .fc-in,.rs-card.ed .rs-stage .fc.thm .fc-in{width:20cqw}
+  .rs-card.ai .p1{left:0;bottom:auto;top:12%}
+  .rs-card.ai .p2{right:0;bottom:0}
+  .rs-card.ai .p3{right:6%;top:0}
+  .rs-card.ai .p4{left:4%;bottom:4%;top:auto}
+}
+@media(prefers-reduced-motion:reduce){.rs-mark,.rs-hub b,.rs-hub i{animation:none!important}.js .rs-card:not(.in){opacity:1;translate:none}.js .rs-card:not(.in) .fc-in{opacity:1;scale:1}}

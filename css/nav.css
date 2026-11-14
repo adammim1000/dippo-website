@@ -1,25 +1,55 @@
-/* Navigasi dan tombol WhatsApp: sama di semua halaman */
-.sh{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:10px 0}
-.shw{max-width:1120px;margin:0 auto;padding:0 20px}
-.sn{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 10px 0 20px;background:rgba(247,246,242,.93);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid #E4E1D8;border-radius:999px;box-shadow:0 10px 40px rgba(118,87,232,.12);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.2}
-.sn-logo{display:flex;align-items:center;gap:8px;color:#17172B;font-weight:800;font-size:23px;letter-spacing:-.03em;text-decoration:none;font-family:'Bricolage Grotesque','Plus Jakarta Sans',sans-serif}
-.sn-logo img{width:36px;height:36px;object-fit:contain}
-.sn ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-.sn ul a{display:block;color:#5D5C73;text-decoration:none;font-size:15px;font-weight:500;padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
-.sn ul a:hover,.sn ul a.on{background:rgba(118,87,232,.1);color:#5F42CC}
-.sn-cta{display:inline-block;background:#7657E8;color:#fff;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 24px rgba(118,87,232,.28);transition:transform .25s,box-shadow .25s}
-.sn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(118,87,232,.38)}
-@media(max-width:800px){.sn{flex-wrap:wrap;height:auto;padding:10px 14px;border-radius:28px;gap:8px}.sn ul{order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:12px}.sn-cta{padding:10px 18px}}
+/* Hero Portofolio dulu ditarik ke bawah menu mengambang; sekarang menu ada di alur halaman */
+.hero.pfh{margin-top:6px;padding-top:74px}
 
-.wab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#7657E8;display:grid;place-items:center;box-shadow:0 12px 32px rgba(118,87,232,.45);transition:transform .2s;text-decoration:none}
+/* Navigasi baru: bar putih rata, logo kiri, menu tengah, tombol kanan (sama di semua halaman) */
+:root{--rb:#2F5BFF;--rb-d:#1E43D6;--rb-soft:#E8EEFF}
+.rn{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s;font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.2}
+.rn.sc{border-color:#E6E9F5;box-shadow:0 8px 30px rgba(23,23,43,.05)}
+.rn-in{max-width:1280px;margin:0 auto;height:76px;padding:0 28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.rn-logo{display:inline-flex;align-items:center;gap:10px;justify-self:start;color:#17172B;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.03em}
+.rn-logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#17172B;color:#fff;font-style:normal;font-size:19px;font-weight:800;letter-spacing:0;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.rn-logo:hover i{transform:rotate(-8deg) scale(1.1)}
+.rn-links{display:flex;gap:6px}
+.rn-links a{display:block;padding:9px 16px;border-radius:999px;color:#17172B;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.rn-links a:hover,.rn-links a.on{color:var(--rb);background:var(--rb-soft)}
+.rn-links .rn-m{display:none}
+.rn-act{display:flex;gap:12px;justify-self:end;align-items:center}
+.rb{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 24px;border-radius:12px;border:1.5px solid var(--rb);font:600 15px/1 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform .2s cubic-bezier(.2,.7,.2,1),box-shadow .2s,background .2s,color .2s}
+.rb.sm{height:40px;padding:0 20px;font-size:14px;border-radius:10px}
+.rb.primary{background:var(--rb);color:#fff;box-shadow:0 10px 26px -8px rgba(47,91,255,.6)}
+.rb.primary:hover{background:var(--rb-d);border-color:var(--rb-d);transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(47,91,255,.7)}
+.rb.ghost{background:#fff;color:var(--rb)}
+.rb.ghost:hover{background:var(--rb-soft);transform:translateY(-2px)}
+.rb:active{transform:scale(.97)}
+.rb:focus-visible,.rn-links a:focus-visible,.rn-logo:focus-visible,.rn-btn:focus-visible{outline:3px solid rgba(47,91,255,.4);outline-offset:3px}
+.rn-btn{display:none;width:40px;height:40px;border:1.5px solid #E6E9F5;border-radius:10px;background:#fff;cursor:pointer;position:relative}
+.rn-btn span{position:absolute;left:11px;right:11px;height:2px;border-radius:2px;background:#17172B;transition:transform .25s,top .25s}
+.rn-btn span:first-child{top:15px}.rn-btn span:last-child{top:22px}
+.rn.open .rn-btn span:first-child{top:18px;transform:rotate(45deg)}.rn.open .rn-btn span:last-child{top:18px;transform:rotate(-45deg)}
+@media(max-width:900px){
+  .rn-in{grid-template-columns:1fr auto;height:64px;padding:0 18px}
+  .rn-d{display:none}
+  .rn-btn{display:block}
+  .rn-links{display:none;position:absolute;left:12px;right:12px;top:70px;flex-direction:column;gap:2px;padding:10px;background:#fff;border:1px solid #E6E9F5;border-radius:18px;box-shadow:0 20px 40px rgba(23,23,43,.12)}
+  .rn.open .rn-links{display:flex}
+  .rn-links .rn-m{display:block}
+  .rn-links a{padding:13px 16px;border-radius:12px}
+}
+@media(max-width:420px){.rn-act .primary{padding:0 14px;font-size:13px}}
+
+
+/* Footer: warna disamakan dengan gaya baru (putih kebiruan, watermark biru) */
+footer{background:#F4F6FC;border-top:1px solid #E6E9F5}
+footer a:hover{color:#2F5BFF}
+footer .mega{background-image:linear-gradient(180deg,rgba(47,91,255,.22),rgba(47,91,255,0) 90%)}
+
+.wab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#2F5BFF;display:grid;place-items:center;box-shadow:0 12px 32px rgba(47,91,255,.45);transition:transform .2s;text-decoration:none}
 .wab:hover{transform:scale(1.08)}
 .wab svg{width:32px;height:32px;fill:#fff}
-.wab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#7657E8;opacity:.45;animation:wabring 2.4s ease-out infinite;z-index:-1}
+.wab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#2F5BFF;opacity:.45;animation:wabring 2.4s ease-out infinite;z-index:-1}
 @keyframes wabring{to{transform:scale(1.7);opacity:0}}
-.wab-tip{position:absolute;right:76px;top:50%;transform:translate(8px,-50%);white-space:nowrap;background:#fff;color:#17172B;font:700 14px 'Plus Jakarta Sans',system-ui,sans-serif;padding:12px 18px;border-radius:16px;border:1px solid #E4E1D8;box-shadow:0 12px 32px rgba(118,87,232,.22);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.wab-tip{position:absolute;right:76px;top:50%;transform:translate(8px,-50%);white-space:nowrap;background:#fff;color:#17172B;font:700 14px 'Plus Jakarta Sans',system-ui,sans-serif;padding:12px 18px;border-radius:16px;border:1px solid #E4E1D8;box-shadow:0 12px 32px rgba(47,91,255,.22);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
 .wab-tip::after{content:"";position:absolute;right:-6px;top:50%;width:12px;height:12px;background:#fff;border-right:1px solid #E4E1D8;border-top:1px solid #E4E1D8;transform:translateY(-50%) rotate(45deg)}
 .wab:hover .wab-tip,.wab:focus-visible .wab-tip{opacity:1;transform:translate(0,-50%)}
 @media(prefers-reduced-motion:reduce){.wab::before{animation:none}}
 
-.sn ul a,.sn-cta{white-space:nowrap}
-@media(max-width:1000px) and (min-width:801px){.sn ul a{padding:8px 10px;font-size:14px}.sn-cta{padding:12px 18px;font-size:14px}}

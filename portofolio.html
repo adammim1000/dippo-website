@@ -9,33 +9,34 @@
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/portofolio.css"><link rel="stylesheet" href="css/system.css"><link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/portofolio.css"><link rel="stylesheet" href="css/system.css"><link rel="stylesheet" href="css/motion.css"><link rel="stylesheet" href="css/hero.css"><link rel="stylesheet" href="css/pages.css">
 </head>
 <body class="">
 <main>
 
 <!-- ===== Hero ===== -->
-<section class="hero pfh">
-  <div class="wrap">
-    <div class="copy">
-      <span class="pill up" style="--i:0">Portofolio &amp; Demo</span>
-      <h1 class="up" style="--i:1">Contoh solusi yang bisa Dippo kerjakan.</h1>
-      <p class="lead up" style="--i:2">Lihat contoh visualnya, lalu coba demo interaktifnya. Belum ada proyek klien yang dipublikasikan di sini. Semua contoh dibuat Dippo dengan data fiktif dan diberi label yang jelas.</p>
-      <div class="btns up" style="--i:3"><a class="btn" href="#demo">Coba demo interaktif</a><a class="btn alt" href="#karya">Lihat contoh proyek</a></div>
-      <ul class="pf-leg up" style="--i:4">
+<section class="rh rp" id="beranda">
+  <div class="rh-frame">
+    <div class="rh-dots" aria-hidden="true"></div>
+    <svg class="rh-lines" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M500 130 L330 20 M500 130 L670 20 M500 130 L150 170 M500 130 L850 170" vector-effect="non-scaling-stroke"/></svg>
+    <div class="rh-center">
+      <div class="rh-mark" aria-hidden="true"><b>D</b></div>
+      <span class="rp-tag">Portofolio &amp; Demo</span>
+      <h1><span>Contoh solusi yang bisa</span> <span class="b">Dippo kerjakan.</span></h1>
+      <p class="rh-lead">Lihat contoh visualnya, lalu coba demo interaktifnya. Belum ada proyek klien yang dipublikasikan di sini. Semua contoh dibuat Dippo dengan data fiktif dan diberi label yang jelas.</p>
+      <div class="rh-cta"><a class="rb primary" href="#demo">Coba demo interaktif</a><a class="rb ghost" href="#karya">Lihat contoh proyek</a></div>
+      <ul class="rp-leg">
         <li><b>Concept Project</b><span>Rancangan solusi untuk kasus fiktif</span></li>
         <li><b>Sample</b><span>Contoh tampilan hasil layanan</span></li>
         <li><b>Interactive Demo</b><span>Simulasi yang bisa dicoba</span></li>
       </ul>
     </div>
-    <div class="art up" style="--i:2">
-      <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true"><circle cx="300" cy="300" r="286" class="r1"/><circle cx="300" cy="300" r="226" class="r2"/><g class="spin"><circle cx="300" cy="14" r="9" fill="#9B84F5"/><circle cx="527" cy="388" r="8" fill="#FFC83D"/><circle cx="96" cy="452" r="8" fill="#2DD4BF"/></g></svg>
-      <i class="disc" aria-hidden="true"></i><i class="shadow" aria-hidden="true"></i>
-      <img class="mascot" data-d="16" src="assets/maskot-dippo.png" alt="Dippo, maskot robot kucing">
-      <a class="fl f1 t-ai" data-d="34" href="#demo"><div class="fh"><i class="dot"></i>Dippo AI</div><b class="pf-fb">Interactive Demo</b><span class="pf-fs">Coba chatbot WhatsApp</span></a>
-      <a class="fl f2 t-cr" data-d="-28" href="#karya"><div class="fh"><i class="dot"></i>Dippo Creative</div><b class="pf-fb">Concept Project</b><span class="pf-fs">Brand identity board</span></a>
-      <a class="fl f3 t-ed" data-d="24" href="#karya"><div class="fh"><i class="dot"></i>Dippo Edu</div><b class="pf-fb">Sample</b><span class="pf-fs">Dokumen akademik</span></a>
-    </div>
+    <a class="fc lbl a1" href="#demo"><div class="fc-in"><span class="k">Dippo AI</span><b>Interactive Demo</b><small>Coba chatbot WhatsApp</small></div></a>
+    <div class="fc thm a2"><div class="fc-in"><img src="assets/hero/gambar-5.png" alt=""></div></div>
+    <a class="fc lbl a3" href="#karya"><div class="fc-in"><span class="k">Dippo Creative</span><b>Concept Project</b><small>Brand identity board</small></div></a>
+    <div class="fc thm a4"><div class="fc-in"><img src="assets/hero/gambar-6.png" alt=""></div></div>
+    <div class="fc big a5" style="--rot:-4deg"><div class="fc-in"><img src="assets/hero/gambar-1.png" alt=""></div></div>
+    <div class="fc big a7" style="--rot:4deg"><div class="fc-in"><img src="assets/hero/gambar-2.png" alt=""></div></div>
   </div>
 </section>
 
@@ -86,7 +87,7 @@
         <label class="pf-f">Nama brand<input id="cr-name" value="Kopi Contoh" maxlength="18" autocomplete="off"></label>
         <fieldset class="pf-f"><legend>Warna</legend>
           <div class="pf-sw" id="cr-pal">
-            <label><input type="radio" name="pal" value="0" checked><span style="--a:#7657E8;--b:#FFC83D" title="Ungu dan kuning"></span></label>
+            <label><input type="radio" name="pal" value="0" checked><span style="--a:#2F5BFF;--b:#FFC83D" title="Biru dan kuning"></span></label>
             <label><input type="radio" name="pal" value="1"><span style="--a:#17172B;--b:#2DD4BF" title="Navy dan teal"></span></label>
             <label><input type="radio" name="pal" value="2"><span style="--a:#FFC83D;--b:#17172B" title="Kuning dan navy"></span></label>
             <label><input type="radio" name="pal" value="3"><span style="--a:#E8553D;--b:#F7F6F2" title="Merah dan putih"></span></label>
@@ -97,7 +98,7 @@
         </fieldset>
       </div>
       <div class="pf-main">
-        <div class="pf-board" id="cr-board" style="--a:#7657E8;--b:#FFC83D;--c:#17172B">
+        <div class="pf-board" id="cr-board" style="--a:#2F5BFF;--b:#FFC83D;--c:#17172B">
           <div class="cb-logo"><b id="cr-ini">K</b></div>
           <div class="cb-word"><b id="cr-word">Kopi Contoh</b><small>Brand fiktif untuk demo</small></div>
           <div class="cb-card"><i class="cb-m" id="cr-ini2">K</i><b id="cr-word2">Kopi Contoh</b><small>halo@contoh.id</small></div>
@@ -145,7 +146,7 @@
     <!-- 1 Brand board -->
     <article class="pf-tile t-cr" data-cat="cr" data-span="7">
       <div class="pf-vis"><span class="pf-lbl">Concept Project</span>
-        <div class="mk-board"><div class="b-logo"><b>K</b><span>Kopi Contoh</span></div><div class="b-card"><i class="bl">K</i><b>Kopi Contoh</b><small>Brand fiktif untuk contoh</small></div><div class="b-pal"><i style="--c:#7657E8"></i><i style="--c:#FFC83D"></i><i style="--c:#17172B"></i><i style="--c:#F7F6F2"></i></div><div class="b-type"><b>Aa</b><small>Bricolage Grotesque<br>Plus Jakarta Sans</small></div></div>
+        <div class="mk-board"><div class="b-logo"><b>K</b><span>Kopi Contoh</span></div><div class="b-card"><i class="bl">K</i><b>Kopi Contoh</b><small>Brand fiktif untuk contoh</small></div><div class="b-pal"><i style="--c:#2F5BFF"></i><i style="--c:#FFC83D"></i><i style="--c:#17172B"></i><i style="--c:#F7F6F2"></i></div><div class="b-type"><b>Aa</b><small>Plus Jakarta Sans<br>Plus Jakarta Sans</small></div></div>
       </div>
       <div class="pf-inf"><span class="pf-cat">Dippo Creative</span><h3>Brand Identity Board: Kopi Contoh</h3><p>Papan identitas visual untuk brand fiktif: logo, palet warna, tipografi, dan kartu nama dalam satu tampilan.</p><p class="pf-sol"><b>Yang ditawarkan</b>Logo, palet warna, tipografi, dan panduan brand yang konsisten.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Creative">Minta solusi serupa</a></div>
     </article>
@@ -182,7 +183,7 @@
     <!-- 5 Feed -->
     <article class="pf-tile t-cr" data-cat="cr" data-span="4">
       <div class="pf-vis"><span class="pf-lbl">Sample</span>
-        <div class="mk-feed"><div class="f-h"><i>K</i><b>kopicontoh</b><small>akun fiktif</small></div><div class="f-g"><i style="--bg:#7657E8;color:#FFC83D">Menu</i><i style="--bg:#FFC83D;color:#17172B">Promo</i><i style="--bg:#17172B;color:#F7F6F2">Baru</i><i style="--bg:#F7F6F2;color:#7657E8">Tips</i><i style="--bg:#7657E8;color:#F7F6F2">Cerita</i><i style="--bg:#FFC83D;color:#7657E8">Event</i><i style="--bg:#17172B;color:#FFC83D">Menu</i><i style="--bg:#F7F6F2;color:#17172B">Info</i><i style="--bg:#7657E8;color:#FFC83D">Promo</i></div></div>
+        <div class="mk-feed"><div class="f-h"><i>K</i><b>kopicontoh</b><small>akun fiktif</small></div><div class="f-g"><i style="--bg:#2F5BFF;color:#FFC83D">Menu</i><i style="--bg:#FFC83D;color:#17172B">Promo</i><i style="--bg:#17172B;color:#F7F6F2">Baru</i><i style="--bg:#F7F6F2;color:#2F5BFF">Tips</i><i style="--bg:#2F5BFF;color:#F7F6F2">Cerita</i><i style="--bg:#FFC83D;color:#2F5BFF">Event</i><i style="--bg:#17172B;color:#FFC83D">Menu</i><i style="--bg:#F7F6F2;color:#17172B">Info</i><i style="--bg:#2F5BFF;color:#FFC83D">Promo</i></div></div>
       </div>
       <div class="pf-inf"><span class="pf-cat">Dippo Creative</span><h3>Feed Instagram satu gaya</h3><p>Contoh grid feed dengan warna, tipografi, dan layout yang seragam.</p><p class="pf-sol"><b>Yang ditawarkan</b>Template dan desain konten media sosial yang konsisten dengan brand.</p><a class="pf-more" href="kontak.html?jasa=Dippo%20Creative">Minta solusi serupa</a></div>
     </article>
@@ -242,5 +243,6 @@
 <script src="js/main.js"></script>
 <script src="js/portofolio.js"></script>
 <script src="js/motion.js"></script>
+<script src="js/float.js"></script>
 </body>
 </html>
